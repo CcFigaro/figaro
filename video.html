@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Video — FIGARÓ</title>
-<meta name="description" content="Videos de FIGARÓ: entrevistas, análisis de coyuntura, lecturas de poesía, mesas redondas y documentales cortos.">
+<meta name="description" content="Videos de FIGARÓ: análisis de coyuntura, comentarios de actualidad y lecturas.">
 <meta name="author" content="Juan Ernesto Carlos">
 <meta name="theme-color" content="#1B3A2F">
 <link rel="icon" href="favicon.jpg" type="image/jpeg">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="FIGARÓ">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Video — FIGARÓ">
-<meta property="og:description" content="Entrevistas, análisis, lecturas y documentales cortos.">
+<meta property="og:description" content="Análisis de coyuntura, comentarios de actualidad y lecturas.">
 <meta property="og:url" content="https://ccfigaro.github.io/figaro/video.html">
 <meta property="og:image" content="https://ccfigaro.github.io/figaro/mi-foto.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,7 @@
   :root {
     --verde: #1B3A2F; --verde-cl: #2C5A47;
     --negro: #0A0A0A; --blanco: #FFFFFF;
-    --crema: #F5F3EE; --gris: #6B6B6B;
+    --crema: #F5F3EE; --gris: #6B6B6B; --gris-cl: #E0E0E0;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -55,56 +55,35 @@
   nav a:hover, nav a.activo { background: var(--negro); }
 
   .contenedor {
-    display: grid; grid-template-columns: 150px 1fr; gap: 30px;
-    max-width: 1400px; margin: 40px auto; padding: 0 40px;
-  }
-  aside {
-    background: var(--blanco); border-left: 3px solid var(--verde);
-    padding: 14px 12px; height: fit-content; position: sticky; top: 20px;
-  }
-  aside h3 {
-    font-family: sans-serif; font-size: 10px; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--verde);
-    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ddd;
-  }
-  aside ul { list-style: none; }
-  aside li { padding: 9px 0; border-bottom: 1px dashed #e0e0e0; }
-  aside li:last-child { border-bottom: none; }
-  aside a {
-    color: var(--negro); text-decoration: none; font-size: 11.5px;
-    line-height: 1.35; display: block; transition: color 0.2s;
-  }
-  aside a:hover { color: var(--verde); }
-  aside .fecha {
-    display: block; font-size: 9.5px; color: var(--gris);
-    font-family: sans-serif; margin-top: 3px;
+    max-width: 1100px; margin: 0 auto; padding: 0 40px;
   }
 
-  main { min-height: 60vh; }
-
-  /* Cabecera */
+  /* Cabecera de sección */
   .titulo-seccion {
-    background: var(--blanco); padding: 34px 38px;
-    border-top: 4px solid var(--negro); margin-bottom: 30px;
+    background: var(--blanco);
+    padding: 40px 44px;
+    border-top: 4px solid var(--negro);
+    border-bottom: 1px solid var(--gris-cl);
+    margin: 48px 0 30px;
   }
   .titulo-seccion h1 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 40px; color: var(--negro); margin-bottom: 8px;
+    font-size: 40px; color: var(--negro); margin-bottom: 10px;
   }
   .titulo-seccion p {
     color: var(--gris); font-size: 16px; font-style: italic;
+    border-left: 3px solid var(--verde); padding-left: 16px;
+    max-width: 720px;
   }
 
   /* Banner al canal */
   .banner-canal {
     background: var(--verde); color: var(--blanco);
-    padding: 22px 28px; margin-bottom: 30px;
+    padding: 22px 28px; margin-bottom: 36px;
     display: flex; justify-content: space-between; align-items: center;
     gap: 20px; flex-wrap: wrap;
   }
-  .banner-canal p {
-    font-size: 16px; margin: 0;
-  }
+  .banner-canal p { font-size: 16px; margin: 0; }
   .banner-canal a {
     background: var(--blanco); color: var(--verde);
     padding: 12px 22px; text-decoration: none;
@@ -115,43 +94,42 @@
   }
   .banner-canal a:hover { background: var(--negro); color: var(--blanco); }
 
-  /* Cuadrícula de videos */
+  /* Rejilla de videos */
   .grid-videos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 28px;
+    margin-bottom: 60px;
   }
-
   .video-card {
-    background: var(--blanco);
-    text-decoration: none; color: inherit;
+    background: var(--blanco); text-decoration: none; color: inherit;
     display: block; overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
     border-bottom: 4px solid var(--verde);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
   .video-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(0,0,0,0.12);
   }
-
   .video-card .miniatura {
     position: relative; width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%; /* Horizontal 16:9 */
     background: #000; overflow: hidden;
+  }
+  .video-card.vertical .miniatura {
+    padding-bottom: 150%; /* Vertical 9:16, para Shorts */
   }
   .video-card .miniatura img {
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%; object-fit: cover;
     transition: transform 0.3s;
   }
-  .video-card:hover .miniatura img { transform: scale(1.05); }
-
-  /* Ícono de play superpuesto */
+  .video-card:hover .miniatura img { transform: scale(1.04); }
   .video-card .miniatura::after {
     content: '';
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px; height: 60px;
+    width: 58px; height: 58px;
     background: rgba(10,10,10,0.75);
     border-radius: 50%;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M8 5v14l11-7z'/></svg>");
@@ -164,29 +142,21 @@
     background-color: var(--verde);
     transform: translate(-50%, -50%) scale(1.1);
   }
-
-  /* Duración */
-  .video-card .duracion {
-    position: absolute; bottom: 10px; right: 10px;
-    background: rgba(0,0,0,0.85); color: #fff;
-    padding: 3px 8px; font-family: sans-serif;
-    font-size: 11px; letter-spacing: 1px; border-radius: 2px;
-    z-index: 2;
-  }
-
   .video-card .info { padding: 18px 20px 20px; }
   .video-card .categoria {
     font-family: sans-serif; font-size: 10px; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--verde-cl);
-    margin-bottom: 8px;
+    text-transform: uppercase; color: var(--verde-cl); margin-bottom: 8px;
   }
   .video-card h3 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 18px; line-height: 1.3;
-    color: var(--negro); margin-bottom: 8px;
+    font-size: 19px; line-height: 1.3; color: var(--negro);
+    margin-bottom: 8px;
+  }
+  .video-card p {
+    font-size: 14.5px; color: #444; line-height: 1.6; margin-bottom: 10px;
   }
   .video-card .meta {
-    font-family: sans-serif; font-size: 12px;
+    font-family: sans-serif; font-size: 11.5px;
     color: var(--gris); letter-spacing: 1px;
   }
 
@@ -211,13 +181,13 @@
   }
 
   @media (max-width: 800px) {
-    .contenedor { grid-template-columns: 1fr; padding: 0 20px; }
-    aside { position: static; }
     .titulo-blog { font-size: 30px; letter-spacing: 2px; }
     header { padding: 20px; gap: 14px; }
     .foto-perfil { width: 54px; height: 54px; }
     nav { padding: 0 10px; }
     nav a { padding: 12px 14px; font-size: 12px; }
+    .contenedor { padding: 0 20px; }
+    .titulo-seccion { padding: 28px 24px; margin: 28px 0 24px; }
     .titulo-seccion h1 { font-size: 28px; }
     .grid-videos { grid-template-columns: 1fr; }
   }
@@ -242,122 +212,58 @@
 
 <div class="contenedor">
 
-  <aside>
-    <h3>Últimas publicaciones</h3>
-    <!-- Los enlaces con # son entradas sin página propia todavía. -->
-    <ul>
-      <li><a href="video.html">Video: entrevista memoria histórica<span class="fecha">12 Oct</span></a></li>
-      <li><a href="#">La democracia bajo presión<span class="fecha">05 Oct</span></a></li>
-      <li><a href="#">Poema: "Lo que queda del silencio"<span class="fecha">09 Oct</span></a></li>
-      <li><a href="investigacion.html">Crisis del agua en América Latina<span class="fecha">28 Sep</span></a></li>
-    </ul>
-  </aside>
+  <section class="titulo-seccion">
+    <h1>Video</h1>
+    <p>Análisis de coyuntura y comentarios de actualidad. Al hacer clic, cada video se abre en YouTube.</p>
+  </section>
 
-  <main>
+  <div class="banner-canal">
+    <p>¿Te gusta el contenido? Suscríbete al canal para no perderte los próximos videos.</p>
+    <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">Ir al canal →</a>
+  </div>
 
-    <section class="titulo-seccion">
-      <h1>Video</h1>
-      <p>Selección de videos publicados en el canal. Al hacer clic, se abre directamente en YouTube.</p>
-    </section>
+  <!-- CÓMO AÑADIR UN VIDEO
+       Duplica uno de los bloques <a class="video-card"> de abajo y cambia:
+       1. ID del video      → en el href (watch?v=ID) y en la miniatura
+       2. Miniatura vertical    → https://img.youtube.com/vi/ID/oar2.jpg
+          Miniatura horizontal  → https://img.youtube.com/vi/ID/maxresdefault.jpg
+          Y la clase de la tarjeta: class="video-card vertical"  (Shorts)
+                                    class="video-card"           (video normal)
+       3. Categoría, título y descripción -->
+  <section class="grid-videos">
 
-    <!-- BANNER DEL CANAL · pon el enlace real de tu canal -->
-    <div class="banner-canal">
-      <p>¿Te gusta el contenido? Suscríbete al canal para no perderte los próximos videos.</p>
-      <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">Ir al canal →</a>
-    </div>
+    <!-- VIDEO 1 · Shorts vertical -->
+    <a href="https://www.youtube.com/watch?v=9m0aSufi0d0" target="_blank" rel="noopener" class="video-card vertical">
+      <div class="miniatura">
+        <img src="https://img.youtube.com/vi/9m0aSufi0d0/oar2.jpg" alt="Análisis sobre Marco Rubio y la política antiterrorista de Estados Unidos">
+      </div>
+      <div class="info">
+        <div class="categoria">Análisis de coyuntura</div>
+        <h3>Análisis sobre Marco Rubio y la política antiterrorista de Estados Unidos</h3>
+        <p>Comentario sobre el anuncio que centra los esfuerzos antiterroristas en grupos de izquierda.</p>
+        <div class="meta">Ver en YouTube →</div>
+      </div>
+    </a>
 
-    <!-- CÓMO AÑADIR UN VIDEO
-         1. Miniatura: https://img.youtube.com/vi/ID_DEL_VIDEO/hqdefault.jpg
-         2. Enlace:    https://www.youtube.com/watch?v=ID_DEL_VIDEO
-         Mientras no tengas los videos, se muestra un marcador verde con "VIDEO"
-         para que la página no aparezca con imágenes rotas. -->
-    <section class="grid-videos">
+    <!-- VIDEO 2 · Shorts vertical -->
+    <a href="https://www.youtube.com/watch?v=X5oxpFMd2dM" target="_blank" rel="noopener" class="video-card vertical">
+      <div class="miniatura">
+        <img src="https://img.youtube.com/vi/X5oxpFMd2dM/oar2.jpg" alt="Comentario sobre los cacerolazos y la protesta en la Plaza de la Bandera">
+      </div>
+      <div class="info">
+        <div class="categoria">Análisis de coyuntura</div>
+        <h3>Los cacerolazos y la protesta en la Plaza de la Bandera</h3>
+        <p>Lectura de la protesta en Panamá y de por qué pierde fuerza con el paso de los días.</p>
+        <div class="meta">Ver en YouTube →</div>
+      </div>
+    </a>
 
-      <!-- Tarjeta de video 1 -->
-      <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener" class="video-card">
-        <div class="miniatura">
-          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231B3A2F'/%3E%3Ctext x='320' y='196' font-family='sans-serif' font-size='42' letter-spacing='10' fill='%23F5F3EE' text-anchor='middle'%3EVIDEO%3C/text%3E%3C/svg%3E" alt="Marcador: entrevista sobre memoria histórica">
-          <span class="duracion">18:42</span>
-        </div>
-        <div class="info">
-          <div class="categoria">Entrevista</div>
-          <h3>Entrevista sobre memoria histórica y presente político</h3>
-          <div class="meta">12 de octubre, 2026</div>
-        </div>
-      </a>
+  </section>
 
-      <!-- Tarjeta de video 2 -->
-      <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener" class="video-card">
-        <div class="miniatura">
-          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231B3A2F'/%3E%3Ctext x='320' y='196' font-family='sans-serif' font-size='42' letter-spacing='10' fill='%23F5F3EE' text-anchor='middle'%3EVIDEO%3C/text%3E%3C/svg%3E" alt="Marcador: análisis de coyuntura">
-          <span class="duracion">12:15</span>
-        </div>
-        <div class="info">
-          <div class="categoria">Análisis</div>
-          <h3>Análisis de coyuntura: la semana política en 10 minutos</h3>
-          <div class="meta">03 de octubre, 2026</div>
-        </div>
-      </a>
-
-      <!-- Tarjeta de video 3 -->
-      <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener" class="video-card">
-        <div class="miniatura">
-          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231B3A2F'/%3E%3Ctext x='320' y='196' font-family='sans-serif' font-size='42' letter-spacing='10' fill='%23F5F3EE' text-anchor='middle'%3EVIDEO%3C/text%3E%3C/svg%3E" alt="Marcador: lectura de poesía">
-          <span class="duracion">06:30</span>
-        </div>
-        <div class="info">
-          <div class="categoria">Creación</div>
-          <h3>Lectura de poesía: tres textos en voz alta</h3>
-          <div class="meta">26 de septiembre, 2026</div>
-        </div>
-      </a>
-
-      <!-- Tarjeta de video 4 -->
-      <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener" class="video-card">
-        <div class="miniatura">
-          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231B3A2F'/%3E%3Ctext x='320' y='196' font-family='sans-serif' font-size='42' letter-spacing='10' fill='%23F5F3EE' text-anchor='middle'%3EVIDEO%3C/text%3E%3C/svg%3E" alt="Marcador: mesa redonda sobre desigualdad">
-          <span class="duracion">45:08</span>
-        </div>
-        <div class="info">
-          <div class="categoria">Mesa redonda</div>
-          <h3>Mesa redonda sobre desigualdad y clase media</h3>
-          <div class="meta">19 de septiembre, 2026</div>
-        </div>
-      </a>
-
-      <!-- Tarjeta de video 5 -->
-      <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener" class="video-card">
-        <div class="miniatura">
-          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231B3A2F'/%3E%3Ctext x='320' y='196' font-family='sans-serif' font-size='42' letter-spacing='10' fill='%23F5F3EE' text-anchor='middle'%3EVIDEO%3C/text%3E%3C/svg%3E" alt="Marcador: documental corto voces del barrio">
-          <span class="duracion">22:50</span>
-        </div>
-        <div class="info">
-          <div class="categoria">Documental</div>
-          <h3>Documental corto: voces del barrio</h3>
-          <div class="meta">10 de septiembre, 2026</div>
-        </div>
-      </a>
-
-      <!-- Tarjeta de video 6 -->
-      <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener" class="video-card">
-        <div class="miniatura">
-          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%231B3A2F'/%3E%3Ctext x='320' y='196' font-family='sans-serif' font-size='42' letter-spacing='10' fill='%23F5F3EE' text-anchor='middle'%3EVIDEO%3C/text%3E%3C/svg%3E" alt="Marcador: charla cómo leer un análisis político">
-          <span class="duracion">32:10</span>
-        </div>
-        <div class="info">
-          <div class="categoria">Charla</div>
-          <h3>Charla: cómo leer un análisis político</h3>
-          <div class="meta">02 de septiembre, 2026</div>
-        </div>
-      </a>
-
-    </section>
-
-  </main>
 </div>
 
 <footer>
-  <!-- REDES SOCIALES · pon aquí tus enlaces reales -->
+  <!-- REDES SOCIALES -->
   <div class="redes">
     <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">YouTube</a>
     <a href="https://instagram.com/WFIGARO" target="_blank" rel="noopener">Instagram</a>

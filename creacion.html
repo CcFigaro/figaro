@@ -55,29 +55,7 @@
   nav a:hover, nav a.activo { background: var(--negro); }
 
   .contenedor {
-    display: grid; grid-template-columns: 150px 1fr; gap: 30px;
-    max-width: 1300px; margin: 40px auto; padding: 0 40px;
-  }
-  aside {
-    background: var(--blanco); border-left: 3px solid var(--verde);
-    padding: 14px 12px; height: fit-content; position: sticky; top: 20px;
-  }
-  aside h3 {
-    font-family: sans-serif; font-size: 10px; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--verde);
-    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ddd;
-  }
-  aside ul { list-style: none; }
-  aside li { padding: 9px 0; border-bottom: 1px dashed #e0e0e0; }
-  aside li:last-child { border-bottom: none; }
-  aside a {
-    color: var(--negro); text-decoration: none; font-size: 11.5px;
-    line-height: 1.35; display: block; transition: color 0.2s;
-  }
-  aside a:hover { color: var(--verde); }
-  aside .fecha {
-    display: block; font-size: 9.5px; color: var(--gris);
-    font-family: sans-serif; margin-top: 3px;
+    max-width: 1000px; margin: 40px auto; padding: 0 40px;
   }
 
   main { min-height: 60vh; }
@@ -155,6 +133,19 @@
     letter-spacing: 1px;
   }
 
+  /* Aviso de sección en preparación */
+  .aviso {
+    background: var(--blanco);
+    border-top: 4px solid var(--verde);
+    padding: 44px 40px;
+    text-align: center;
+  }
+  .aviso h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px; color: var(--negro); margin-bottom: 12px;
+  }
+  .aviso p { color: var(--gris); font-size: 16px; max-width: 560px; margin: 0 auto; }
+
   footer {
     background: var(--negro); color: var(--blanco);
     text-align: center; padding: 36px 20px; margin-top: 60px;
@@ -176,8 +167,7 @@
   }
 
   @media (max-width: 800px) {
-    .contenedor { grid-template-columns: 1fr; padding: 0 20px; }
-    aside { position: static; }
+    .contenedor { padding: 0 20px; }
     .titulo-blog { font-size: 30px; letter-spacing: 2px; }
     header { padding: 20px; gap: 14px; }
     .foto-perfil { width: 54px; height: 54px; }
@@ -187,6 +177,7 @@
     .titulo-seccion h1 { font-size: 36px; }
     .creacion { padding: 28px 22px; }
     .creacion h2 { font-size: 22px; }
+    .aviso { padding: 32px 22px; }
   }
 </style>
 </head>
@@ -209,17 +200,6 @@
 
 <div class="contenedor">
 
-  <aside>
-    <h3>Últimas publicaciones</h3>
-    <!-- Los enlaces con # son entradas sin página propia todavía. -->
-    <ul>
-      <li><a href="video.html">Video: entrevista memoria histórica<span class="fecha">12 Oct</span></a></li>
-      <li><a href="#">La democracia bajo presión<span class="fecha">05 Oct</span></a></li>
-      <li><a href="#">Poema: "Lo que queda del silencio"<span class="fecha">09 Oct</span></a></li>
-      <li><a href="investigacion.html">Crisis del agua en América Latina<span class="fecha">28 Sep</span></a></li>
-    </ul>
-  </aside>
-
   <main>
 
     <section class="titulo-seccion">
@@ -231,37 +211,23 @@
 
     <section class="lista-creaciones">
 
-      <!-- ENLACES PENDIENTES · todavía no existen las páginas de cada texto.
-           Cuando escribas el poema o el cuento, crea el archivo
-           (creacion-1.html, creacion-2.html...) y cambia href="#" por su nombre. -->
-
+      <!-- PLANTILLA · cuando escribas un texto, duplica este bloque, quita los
+           marcadores de comentario y cambia el tipo, el título, el fragmento y
+           la fecha. Si además creas el archivo del texto completo (por ejemplo
+           creacion-1.html), cambia href="#" por su nombre. -->
+      <!--
       <a href="#" class="creacion">
         <div class="tipo">Poema</div>
-        <h2>Lo que queda del silencio</h2>
-        <p class="fragmento">Aquí va un fragmento breve del poema. Dos o tres versos que inviten al lector a entrar. El resto se lee al hacer clic.</p>
-        <div class="meta">9 de octubre, 2026</div>
+        <h2>Título del texto</h2>
+        <p class="fragmento">Dos o tres versos o líneas de presentación.</p>
+        <div class="meta">Fecha de publicación</div>
       </a>
+      -->
 
-      <a href="#" class="creacion">
-        <div class="tipo">Cuento corto</div>
-        <h2>La casa de los espejos</h2>
-        <p class="fragmento">Un fragmento del cuento. Algo que atrape, que deje una pregunta abierta. El lector decide si quiere seguir leyendo.</p>
-        <div class="meta">20 de septiembre, 2026</div>
-      </a>
-
-      <a href="#" class="creacion">
-        <div class="tipo">Prosa breve</div>
-        <h2>Notas sobre la ciudad al amanecer</h2>
-        <p class="fragmento">Un pequeño fragmento de prosa poética. Ideal para textos que no son ni cuento ni poema, sino algo intermedio.</p>
-        <div class="meta">8 de septiembre, 2026</div>
-      </a>
-
-      <a href="#" class="creacion">
-        <div class="tipo">Poema</div>
-        <h2>Instrucciones para olvidar</h2>
-        <p class="fragmento">Fragmento del poema. Aquí puedes poner los versos que mejor representen el tono del texto completo.</p>
-        <div class="meta">24 de agosto, 2026</div>
-      </a>
+      <div class="aviso">
+        <h3>Aquí irán mis textos</h3>
+        <p>Todavía no he publicado poemas ni cuentos en esta sección. Cuando lo haga, aparecerán en esta misma página.</p>
+      </div>
 
     </section>
 

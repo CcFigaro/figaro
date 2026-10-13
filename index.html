@@ -25,7 +25,7 @@
   :root {
     --verde: #1B3A2F; --verde-cl: #2C5A47;
     --negro: #0A0A0A; --blanco: #FFFFFF;
-    --crema: #F5F3EE; --gris: #6B6B6B;
+    --crema: #F5F3EE; --gris: #6B6B6B; --gris-cl: #E0E0E0;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -60,119 +60,110 @@
   }
   nav a:hover, nav a.activo { background: var(--negro); }
 
-  /* LAYOUT — sidebar reducida a la mitad (150px) */
+  /* CONTENIDO CENTRADO */
   .contenedor {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 30px;
-    max-width: 1300px; margin: 40px auto; padding: 0 40px;
+    max-width: 1000px; margin: 0 auto; padding: 0 40px;
   }
 
-  /* SIDEBAR */
-  aside {
-    background: var(--blanco);
-    border-left: 3px solid var(--verde);
-    padding: 14px 12px;
-    height: fit-content; position: sticky; top: 20px;
-  }
-  aside h3 {
-    font-family: sans-serif; font-size: 10px; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--verde);
-    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ddd;
-  }
-  aside ul { list-style: none; }
-  aside li {
-    padding: 9px 0; border-bottom: 1px dashed #e0e0e0;
-  }
-  aside li:last-child { border-bottom: none; }
-  aside a {
-    color: var(--negro); text-decoration: none; font-size: 11.5px;
-    line-height: 1.35; display: block; transition: color 0.2s;
-  }
-  aside a:hover { color: var(--verde); }
-  aside .fecha {
-    display: block; font-size: 9.5px; color: var(--gris);
-    font-family: sans-serif; margin-top: 3px; letter-spacing: 0.5px;
-  }
-
-  /* CONTENIDO */
-  main { min-height: 60vh; }
-
-  /* PORTADA — última publicación destacada */
-  .portada {
+  /* BIENVENIDA */
+  .bienvenida {
     background: var(--blanco);
     border-top: 4px solid var(--negro);
-    margin-bottom: 30px;
-    overflow: hidden;
+    padding: 56px 48px;
+    margin: 48px 0 40px;
   }
-  .portada .etiqueta-portada {
+  .bienvenida .etiqueta {
     display: inline-block;
     background: var(--verde); color: var(--blanco);
     font-family: sans-serif; font-size: 10px; letter-spacing: 3px;
     text-transform: uppercase; padding: 6px 14px;
-    margin: 28px 32px 0;
+    margin-bottom: 22px;
   }
-  .portada h1 {
+  .bienvenida h1 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 34px; line-height: 1.25; color: var(--negro);
-    margin: 16px 32px 10px;
+    font-size: 38px; line-height: 1.2; color: var(--negro);
+    margin-bottom: 20px;
   }
-  .portada .meta {
-    font-family: sans-serif; font-size: 13px; color: var(--gris);
-    letter-spacing: 1px; margin: 0 32px 22px;
+  .bienvenida h1 em { color: var(--verde); font-style: italic; }
+  .bienvenida p {
+    font-size: 18px; line-height: 1.8; color: #333;
+    max-width: 720px; margin-bottom: 16px;
+  }
+  .bienvenida p:last-child { margin-bottom: 0; }
+
+  /* TÍTULO DE SECCIÓN */
+  .titulo-bloque {
+    font-family: sans-serif; font-size: 12px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--verde);
+    padding-bottom: 12px; margin-bottom: 24px;
+    border-bottom: 1px solid var(--gris-cl);
   }
 
-  /* Video embebido en la portada */
-  .portada .video-wrapper {
-    position: relative; width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
-    background: #000;
-  }
-  .portada .video-wrapper iframe {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%; border: 0;
-  }
-
-  .portada .acciones {
-    padding: 20px 32px 26px;
-    display: flex; gap: 14px; flex-wrap: wrap;
-  }
-  .portada .acciones a {
-    font-family: sans-serif; font-size: 12px; letter-spacing: 2px;
-    text-transform: uppercase; text-decoration: none;
-    padding: 10px 18px; transition: background 0.2s, color 0.2s;
-  }
-  .portada .acciones .principal {
-    background: var(--verde); color: var(--blanco);
-  }
-  .portada .acciones .principal:hover { background: var(--negro); }
-  .portada .acciones .secundario {
-    border: 1px solid var(--verde); color: var(--verde);
-  }
-  .portada .acciones .secundario:hover {
-    background: var(--verde); color: var(--blanco);
-  }
-
-  /* TARJETAS DE SECCIONES */
-  .grid-secciones {
+  /* REJILLA DE VIDEOS */
+  .grid-videos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+    margin-bottom: 60px;
   }
-  .tarjeta {
-    background: var(--blanco); padding: 24px;
+  .video-card {
+    background: var(--blanco); text-decoration: none; color: inherit;
+    display: block; overflow: hidden;
     border-bottom: 4px solid var(--verde);
     transition: transform 0.2s, box-shadow 0.2s;
-    text-decoration: none; color: inherit; display: block;
   }
-  .tarjeta:hover {
-    transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  .video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
   }
-  .tarjeta h2 {
-    font-family: sans-serif; font-size: 13px; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--verde); margin-bottom: 8px;
+  .video-card .miniatura {
+    position: relative; width: 100%;
+    padding-bottom: 56.25%; /* Horizontal 16:9 */
+    background: #000; overflow: hidden;
   }
-  .tarjeta p { color: #444; font-size: 14px; }
+  .video-card.vertical .miniatura {
+    padding-bottom: 150%; /* Vertical 9:16, para Shorts */
+  }
+  .video-card .miniatura img {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .video-card:hover .miniatura img { transform: scale(1.04); }
+  .video-card .miniatura::after {
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 58px; height: 58px;
+    background: rgba(10,10,10,0.75);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M8 5v14l11-7z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  .video-card:hover .miniatura::after {
+    background-color: var(--verde);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  .video-card .info { padding: 18px 20px 20px; }
+  .video-card .categoria {
+    font-family: sans-serif; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--verde-cl); margin-bottom: 8px;
+  }
+  .video-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 19px; line-height: 1.3; color: var(--negro);
+    margin-bottom: 8px;
+  }
+  .video-card p {
+    font-size: 14.5px; color: #444; line-height: 1.6; margin-bottom: 10px;
+  }
+  .video-card .meta {
+    font-family: sans-serif; font-size: 11.5px;
+    color: var(--gris); letter-spacing: 1px;
+  }
 
   /* PIE */
   footer {
@@ -187,7 +178,7 @@
     color: var(--blanco); text-decoration: none;
     font-family: sans-serif; font-size: 13px; letter-spacing: 2px;
     text-transform: uppercase; border: 1px solid var(--verde-cl);
-    padding: 8px 16px; border-radius: 2px; transition: background 0.2s;
+    padding: 8px 16px; transition: background 0.2s;
   }
   .redes a:hover { background: var(--verde); }
   footer .copy {
@@ -197,17 +188,16 @@
 
   /* RESPONSIVE */
   @media (max-width: 800px) {
-    .contenedor { grid-template-columns: 1fr; padding: 0 20px; }
-    aside { position: static; }
     .titulo-blog { font-size: 30px; letter-spacing: 2px; }
     header { padding: 20px; gap: 14px; }
     .foto-perfil { width: 54px; height: 54px; }
     nav { padding: 0 10px; }
     nav a { padding: 12px 14px; font-size: 12px; }
-    .portada h1 { font-size: 24px; margin: 14px 20px 10px; }
-    .portada .etiqueta-portada { margin: 22px 20px 0; }
-    .portada .meta { margin: 0 20px 18px; }
-    .portada .acciones { padding: 16px 20px 22px; }
+    .contenedor { padding: 0 20px; }
+    .bienvenida { padding: 34px 24px; margin: 28px 0; }
+    .bienvenida h1 { font-size: 26px; }
+    .bienvenida p { font-size: 16.5px; }
+    .grid-videos { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -220,6 +210,7 @@
   <h1 class="titulo-blog">FIGAR<span>Ó</span></h1>
 </header>
 
+<!-- NAVEGACIÓN -->
 <nav>
   <a href="index.html" class="activo">Inicio</a>
   <a href="analisis.html">Análisis</a>
@@ -229,81 +220,53 @@
   <a href="sobre-mi.html">Sobre mí</a>
 </nav>
 
-<!-- CONTENIDO -->
 <div class="contenedor">
 
-  <!-- SIDEBAR -->
-  <aside>
-    <h3>Últimas publicaciones</h3>
-    <!-- Los enlaces con # son entradas sin página propia todavía.
-         Cuando escribas el texto, crea el archivo y sustituye el #. -->
-    <ul>
-      <li><a href="video.html">Video: entrevista sobre memoria histórica<span class="fecha">12 Oct</span></a></li>
-      <li><a href="#">La democracia bajo presión<span class="fecha">05 Oct</span></a></li>
-      <li><a href="#">Poema: "Lo que queda del silencio"<span class="fecha">09 Oct</span></a></li>
-      <li><a href="investigacion.html">Crisis del agua en América Latina<span class="fecha">28 Sep</span></a></li>
-      <li><a href="#">Cuento corto: "La casa de los espejos"<span class="fecha">20 Sep</span></a></li>
-    </ul>
-  </aside>
+  <!-- BIENVENIDA -->
+  <section class="bienvenida">
+    <span class="etiqueta">Bienvenido</span>
+    <h1>Un espacio para el <em>análisis</em>, la creación y la investigación</h1>
+    <p>Aquí reúno mi trabajo en tres frentes: la lectura crítica de la actualidad, la escritura creativa y la investigación rigurosa con fuentes y datos.</p>
+    <p>Empiezo publicando video. Los textos irán llegando poco a poco.</p>
+  </section>
 
-  <!-- PRINCIPAL -->
-  <main>
+  <!-- VIDEOS PUBLICADOS -->
+  <h2 class="titulo-bloque">Videos publicados</h2>
+  <section class="grid-videos">
 
-    <!-- PORTADA: última publicación (video reproducible) -->
-    <section class="portada">
-      <span class="etiqueta-portada">Última publicación · Video</span>
-      <h1>Entrevista sobre memoria histórica y presente político</h1>
-      <p class="meta">12 de octubre, 2026 · Duración 18:42 · Canal FIGARÓ</p>
-
-      <!-- PORTADA · VIDEO DESTACADO
-           Para insertar tu video: abre tu video en YouTube, pulsa "Compartir" >
-           "Insertar" y copia SOLO el identificador que aparece después de
-           /embed/  (por ejemplo dQw4w9WgXcQ). Pégalo en el src de abajo.
-           Nota: al abrir la web desde el disco (file://) YouTube puede mostrar
-           el "Error 153". Desaparece cuando la página está publicada en internet. -->
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          title="Último video de FIGARÓ"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    <!-- VIDEO 1 · Shorts vertical -->
+    <a href="https://www.youtube.com/watch?v=9m0aSufi0d0" target="_blank" rel="noopener" class="video-card vertical">
+      <div class="miniatura">
+        <img src="https://img.youtube.com/vi/9m0aSufi0d0/oar2.jpg" alt="Análisis sobre Marco Rubio y la política antiterrorista de Estados Unidos">
       </div>
-
-      <div class="acciones">
-        <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener" class="principal">Ver en YouTube</a>
-        <a href="video.html" class="secundario">Todos los videos</a>
+      <div class="info">
+        <div class="categoria">Análisis · Video</div>
+        <h3>Análisis sobre Marco Rubio y la política antiterrorista de Estados Unidos</h3>
+        <p>Comentario sobre el anuncio que centra los esfuerzos antiterroristas en grupos de izquierda.</p>
+        <div class="meta">Ver en YouTube →</div>
       </div>
-    </section>
+    </a>
 
-    <!-- Secciones -->
-    <section class="grid-secciones">
-      <a href="analisis.html" class="tarjeta">
-        <h2>Análisis</h2>
-        <p>Reflexiones sobre política, sociedad y actualidad.</p>
-      </a>
-      <a href="creacion.html" class="tarjeta">
-        <h2>Creación</h2>
-        <p>Poemas, cuentos y todo lo que nace de la escritura creativa.</p>
-      </a>
-      <a href="investigacion.html" class="tarjeta">
-        <h2>Investigación</h2>
-        <p>Trabajos de fondo, fuentes y datos sobre temas concretos.</p>
-      </a>
-      <a href="video.html" class="tarjeta">
-        <h2>Video</h2>
-        <p>Selección de videos y enlaces directos al canal.</p>
-      </a>
-    </section>
+    <!-- VIDEO 2 · Shorts vertical -->
+    <a href="https://www.youtube.com/watch?v=X5oxpFMd2dM" target="_blank" rel="noopener" class="video-card vertical">
+      <div class="miniatura">
+        <img src="https://img.youtube.com/vi/X5oxpFMd2dM/oar2.jpg" alt="Comentario sobre los cacerolazos y la protesta en la Plaza de la Bandera">
+      </div>
+      <div class="info">
+        <div class="categoria">Análisis · Video</div>
+        <h3>Los cacerolazos y la protesta en la Plaza de la Bandera</h3>
+        <p>Lectura de la protesta en Panamá y de por qué pierde fuerza con el paso de los días.</p>
+        <div class="meta">Ver en YouTube →</div>
+      </div>
+    </a>
 
-  </main>
+  </section>
+
 </div>
 
 <!-- PIE -->
 <footer>
-  <!-- REDES SOCIALES · pon aquí tus enlaces reales -->
+  <!-- REDES SOCIALES -->
   <div class="redes">
     <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">YouTube</a>
     <a href="https://instagram.com/WFIGARO" target="_blank" rel="noopener">Instagram</a>
