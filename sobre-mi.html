@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mí — FIGARÓ</title>
+<meta name="description" content="Juan Ernesto Carlos, psicólogo clínico e investigador: redes sociales y autoconcepto, traumas transgeneracionales, salud mental afrodescendiente y justicia racial, social y climática.">
+<meta name="author" content="Juan Ernesto Carlos Fígaro">
+<meta name="theme-color" content="#1B3A2F">
+<link rel="icon" href="favicon.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="favicon.jpg">
+<link rel="canonical" href="https://TUUSUARIO.github.io/figaro/sobre-mi.html">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="FIGARÓ">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Sobre mí — FIGARÓ">
+<meta property="og:description" content="Trayectoria, formación y por qué existe este blog.">
+<meta property="og:url" content="https://TUUSUARIO.github.io/figaro/sobre-mi.html">
+<meta property="og:image" content="https://TUUSUARIO.github.io/figaro/mi-foto.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --verde: #1B3A2F; --verde-cl: #2C5A47;
+    --negro: #0A0A0A; --blanco: #FFFFFF;
+    --crema: #F5F3EE; --gris: #6B6B6B; --gris-cl: #E0E0E0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--crema); color: var(--negro); line-height: 1.6;
+  }
+  header {
+    background: var(--negro); color: var(--blanco);
+    padding: 24px 40px; display: flex; align-items: center; gap: 20px;
+  }
+  .foto-perfil {
+    width: 68px; height: 68px; border-radius: 50%;
+    object-fit: cover; border: 2px solid var(--verde-cl); flex-shrink: 0;
+  }
+  .titulo-blog {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 42px; letter-spacing: 4px; font-weight: 700;
+  }
+  .titulo-blog span { color: var(--verde-cl); }
+  nav {
+    background: var(--verde); padding: 0 40px;
+    display: flex; flex-wrap: wrap; border-bottom: 3px solid var(--negro);
+  }
+  nav a {
+    color: var(--blanco); text-decoration: none; padding: 16px 22px;
+    font-family: sans-serif; font-size: 14px; letter-spacing: 2px;
+    text-transform: uppercase; transition: background 0.2s;
+  }
+  nav a:hover, nav a.activo { background: var(--negro); }
+
+  /* Sin sidebar: la biografía usa todo el ancho centrado */
+  .bio-wrapper {
+    max-width: 820px;
+    margin: 60px auto;
+    padding: 0 24px;
+  }
+
+  /* Bloque de presentación */
+  .bio-presentacion {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--gris-cl);
+  }
+  .bio-presentacion .foto-grande {
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--verde);
+    flex-shrink: 0;
+  }
+  .bio-presentacion .intro h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 34px;
+    color: var(--negro);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .bio-presentacion .intro .rol {
+    font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.4px;
+    color: var(--verde-cl);
+    white-space: nowrap;
+    margin-top: 4px;
+  }
+
+  /* Cuerpo de la biografía — texto libre, sin subtítulos */
+  .bio-cuerpo p {
+    font-size: 18px;
+    line-height: 1.85;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+  }
+  .bio-cuerpo p.destacado {
+    font-size: 22px;
+    font-style: italic;
+    color: var(--verde);
+    border-left: 4px solid var(--verde);
+    padding-left: 22px;
+    margin: 34px 0;
+    line-height: 1.6;
+  }
+
+  /* Contacto al final */
+  .bio-contacto {
+    margin-top: 60px;
+    padding: 32px 34px;
+    background: var(--blanco);
+    border-top: 4px solid var(--verde);
+    text-align: center;
+  }
+  .bio-contacto h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: var(--negro);
+    margin-bottom: 12px;
+  }
+  .bio-contacto p {
+    color: var(--gris);
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .bio-contacto .botones {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .bio-contacto a {
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 22px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .bio-contacto a.principal {
+    background: var(--verde); color: var(--blanco);
+  }
+  .bio-contacto a.principal:hover { background: var(--negro); }
+  .bio-contacto a.secundario {
+    border: 1px solid var(--verde); color: var(--verde);
+  }
+  .bio-contacto a.secundario:hover {
+    background: var(--verde); color: var(--blanco);
+  }
+
+  footer {
+    background: var(--negro); color: var(--blanco);
+    text-align: center; padding: 36px 20px; margin-top: 60px;
+  }
+  .redes {
+    display: flex; justify-content: center; gap: 22px;
+    margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .redes a {
+    color: var(--blanco); text-decoration: none;
+    font-family: sans-serif; font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; border: 1px solid var(--verde-cl);
+    padding: 8px 16px; transition: background 0.2s;
+  }
+  .redes a:hover { background: var(--verde); }
+  footer .copy {
+    font-size: 13px; color: #999;
+    font-family: sans-serif; letter-spacing: 1px;
+  }
+
+  @media (max-width: 800px) {
+    .titulo-blog { font-size: 30px; letter-spacing: 2px; }
+    header { padding: 20px; gap: 14px; }
+    .foto-perfil { width: 54px; height: 54px; }
+    nav { padding: 0 10px; }
+    nav a { padding: 12px 14px; font-size: 12px; }
+    .bio-presentacion {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+    .bio-presentacion .intro h1 { font-size: 26px; }
+    /* En pantallas estrechas la linea del perfil se envuelve en dos lineas
+       centradas, en lugar de desbordarse a los lados */
+    .bio-presentacion .intro .rol {
+      white-space: normal;
+      font-size: 10.5px;
+      letter-spacing: 0.2px;
+      line-height: 1.6;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .bio-cuerpo p { font-size: 16.5px; }
+    .bio-cuerpo p.destacado { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <!-- FOTO DE PERFIL · mi-foto.jpg es una imagen cuadrada de ~700x700 px (102 KB) -->
+  <img src="mi-foto.jpg" alt="Retrato de Juan Ernesto Carlos" class="foto-perfil">
+  <h1 class="titulo-blog">FIGAR<span>Ó</span></h1>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="analisis.html">Análisis</a>
+  <a href="creacion.html">Creación</a>
+  <a href="investigacion.html">Investigación</a>
+  <a href="video.html">Video</a>
+  <a href="sobre-mi.html" class="activo">Sobre mí</a>
+</nav>
+
+<article class="bio-wrapper">
+
+  <!-- Presentación -->
+  <section class="bio-presentacion">
+    <!-- FOTO GRANDE · usa la misma imagen cuadrada que en la cabecera -->
+    <img src="mi-foto.jpg" alt="Retrato de Juan Ernesto Carlos" class="foto-grande">
+    <div class="intro">
+      <h1>Juan Ernesto Carlos</h1>
+      <div class="rol">Psicólogo clínico · Investigador · Activista por la justicia racial, social y climática</div>
+    </div>
+  </section>
+
+  <!-- Cuerpo libre de la biografía: texto corrido, sin subtítulos -->
+  <div class="bio-cuerpo">
+
+    <p>Juan Ernesto Carlos nació en Villa Clara, Samaná, República Dominicana, en una familia vinculada a las luchas campesinas y a la defensa del derecho a la tierra. Crecer en ese entorno marcó su manera de entender el mundo: la tierra no es solo un recurso, es el lugar desde donde una comunidad se nombra a sí misma y defiende su dignidad.</p>
+
+    <p>Es licenciado en Psicología y posee una maestría en Psicología Clínica por la Universidad Abierta para Adultos (UAPA).</p>
+
+    <p class="destacado">La salud mental no se entiende sin justicia social, y la justicia social no se entiende sin memoria: lo que no se nombra, no se sana.</p>
+
+    <p>Su labor académica e investigativa se centra en el estudio de la influencia de las redes sociales en el comportamiento humano, la autoestima, la autoimagen y la construcción del autoconcepto. Le interesa de manera particular cómo las plataformas digitales moldean la forma en que nos percibimos, nos comparamos y nos valoramos.</p>
+
+    <p>Ese trabajo se complementa con el desarrollo de propuestas terapéuticas orientadas a la comprensión de los traumas transgeneracionales y a la salud mental de las poblaciones afrodescendientes, un campo donde la herencia histórica y el bienestar psicológico se entrelazan de manera inseparable.</p>
+
+    <p>Su trayectoria social y política está marcada por la defensa de los derechos de las comunidades campesinas y afrodescendientes. Forma parte de la <strong>Articulación Nacional Campesina</strong>, de la <strong>Red Dominicana de Estudios y Empoderamiento Afrodescendiente (RedAfros)</strong> y de la <strong>Junta de Asociaciones Campesinas de Samaná (JACASA)</strong>.</p>
+
+    <p>Desde esos espacios impulsa iniciativas relacionadas con la igualdad de derechos, el reconocimiento de la población afrodescendiente y la lucha contra la discriminación racial y el racismo estructural.</p>
+
+    <p>Asimismo, ha colaborado en iniciativas vinculadas a la justicia climática, la salud pública, la calidad del aire y la protección de las comunidades rurales. Son frentes que suelen tratarse por separado y que, en el territorio, son el mismo problema: quien respira aire contaminado y no tiene tierra donde vivir tampoco tiene garantizada la salud.</p>
+
+    <p>Su trabajo integra la salud mental, la justicia social y la sostenibilidad ambiental, con el propósito de contribuir a sociedades más inclusivas, equitativas y en armonía con la naturaleza.</p>
+
+    <p>FIGARÓ es el nombre que eligió para este blog, el espacio donde reúne las tres dimensiones de su trabajo: el análisis de la realidad social y política, la creación literaria y la investigación rigurosa. No son compartimentos separados, sino tres maneras de mirar lo mismo: cómo se construye una sociedad que cuide a su gente.</p>
+
+    <p>Aquí encontrará análisis sobre la actualidad dominicana y latinoamericana, investigación con fuentes y datos, y textos creativos que nacen del mismo impulso de nombrar lo que a menudo se calla. Si algo de esto le resuena, escriba: la conversación también es una forma de construir.</p>
+
+  </div>
+
+  <!-- Contacto -->
+  <section class="bio-contacto">
+    <h3>Hablemos</h3>
+    <p>Si quieres comentar algo, proponer una colaboración o simplemente saludar.</p>
+    <!-- CONTACTO · sustituye el correo por el tuyo real -->
+    <div class="botones">
+      <!-- El texto visible evita que los robots de spam rastreen tu correo -->
+      <a href="mailto:ccarlos@live.com" class="principal">Enviar correo</a>
+      <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener" class="secundario">Mi canal</a>
+    </div>
+  </section>
+
+</article>
+
+<footer>
+  <!-- REDES SOCIALES · pon aquí tus enlaces reales -->
+  <div class="redes">
+    <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://instagram.com/WFIGARO" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/Burrolom" target="_blank" rel="noopener">X</a>
+    <a href="https://facebook.com/CcFigaro" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <p class="copy">© 2026 FIGARÓ — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

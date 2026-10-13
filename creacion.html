@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creación — FIGARÓ</title>
+<meta name="description" content="Poemas, cuentos cortos y prosa breve de FIGARÓ. Textos literarios para leer despacio.">
+<meta name="author" content="Juan Ernesto Carlos Fígaro">
+<meta name="theme-color" content="#1B3A2F">
+<link rel="icon" href="favicon.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="favicon.jpg">
+<link rel="canonical" href="https://TUUSUARIO.github.io/figaro/creacion.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FIGARÓ">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Creación — FIGARÓ">
+<meta property="og:description" content="Poemas, cuentos cortos y prosa breve.">
+<meta property="og:url" content="https://TUUSUARIO.github.io/figaro/creacion.html">
+<meta property="og:image" content="https://TUUSUARIO.github.io/figaro/mi-foto.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --verde: #1B3A2F; --verde-cl: #2C5A47;
+    --negro: #0A0A0A; --blanco: #FFFFFF;
+    --crema: #F5F3EE; --gris: #6B6B6B; --gris-cl: #E0E0E0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--crema); color: var(--negro); line-height: 1.6;
+  }
+  header {
+    background: var(--negro); color: var(--blanco);
+    padding: 24px 40px; display: flex; align-items: center; gap: 20px;
+  }
+  .foto-perfil {
+    width: 68px; height: 68px; border-radius: 50%;
+    object-fit: cover; border: 2px solid var(--verde-cl); flex-shrink: 0;
+  }
+  .titulo-blog {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 42px; letter-spacing: 4px; font-weight: 700;
+  }
+  .titulo-blog span { color: var(--verde-cl); }
+  nav {
+    background: var(--verde); padding: 0 40px;
+    display: flex; flex-wrap: wrap; border-bottom: 3px solid var(--negro);
+  }
+  nav a {
+    color: var(--blanco); text-decoration: none; padding: 16px 22px;
+    font-family: sans-serif; font-size: 14px; letter-spacing: 2px;
+    text-transform: uppercase; transition: background 0.2s;
+  }
+  nav a:hover, nav a.activo { background: var(--negro); }
+
+  .contenedor {
+    display: grid; grid-template-columns: 150px 1fr; gap: 30px;
+    max-width: 1300px; margin: 40px auto; padding: 0 40px;
+  }
+  aside {
+    background: var(--blanco); border-left: 3px solid var(--verde);
+    padding: 14px 12px; height: fit-content; position: sticky; top: 20px;
+  }
+  aside h3 {
+    font-family: sans-serif; font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--verde);
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ddd;
+  }
+  aside ul { list-style: none; }
+  aside li { padding: 9px 0; border-bottom: 1px dashed #e0e0e0; }
+  aside li:last-child { border-bottom: none; }
+  aside a {
+    color: var(--negro); text-decoration: none; font-size: 11.5px;
+    line-height: 1.35; display: block; transition: color 0.2s;
+  }
+  aside a:hover { color: var(--verde); }
+  aside .fecha {
+    display: block; font-size: 9.5px; color: var(--gris);
+    font-family: sans-serif; margin-top: 3px;
+  }
+
+  main { min-height: 60vh; }
+
+  /* Cabecera poética */
+  .titulo-seccion {
+    background: var(--blanco);
+    padding: 60px 50px;
+    border-top: 4px solid var(--negro);
+    text-align: center;
+    margin-bottom: 34px;
+  }
+  .titulo-seccion .prefijo {
+    font-family: sans-serif; font-size: 11px; letter-spacing: 6px;
+    text-transform: uppercase; color: var(--verde-cl); margin-bottom: 20px;
+  }
+  .titulo-seccion h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 56px; font-style: italic; color: var(--negro);
+    margin-bottom: 18px; line-height: 1.1;
+  }
+  .titulo-seccion .descripcion {
+    font-size: 18px; color: var(--gris);
+    font-style: italic; max-width: 620px; margin: 0 auto;
+  }
+  .titulo-seccion .linea {
+    width: 60px; height: 2px; background: var(--verde);
+    margin: 26px auto 0;
+  }
+
+  /* Lista de creaciones — estilo libre */
+  .lista-creaciones {
+    display: flex; flex-direction: column; gap: 0;
+  }
+
+  .creacion {
+    background: var(--blanco);
+    padding: 40px 44px;
+    border-bottom: 1px solid var(--gris-cl);
+    text-decoration: none; color: inherit;
+    display: block; position: relative;
+    transition: background 0.25s, padding-left 0.25s;
+  }
+  .creacion:last-child { border-bottom: none; }
+  .creacion:hover {
+    background: var(--crema);
+    padding-left: 56px;
+  }
+  .creacion::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 0; background: var(--verde); transition: width 0.25s;
+  }
+  .creacion:hover::before { width: 6px; }
+
+  .creacion .tipo {
+    font-family: sans-serif; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--verde-cl);
+    margin-bottom: 14px;
+  }
+  .creacion h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px; font-style: italic;
+    color: var(--negro); line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .creacion .fragmento {
+    font-size: 17px; line-height: 1.75;
+    color: #333; font-style: italic;
+    max-width: 640px; margin-bottom: 18px;
+  }
+  .creacion .fragmento::before { content: '"'; color: var(--verde); font-size: 26px; }
+  .creacion .fragmento::after  { content: '"'; color: var(--verde); font-size: 26px; }
+  .creacion .meta {
+    font-family: sans-serif; font-size: 12px; color: var(--gris);
+    letter-spacing: 1px;
+  }
+
+  footer {
+    background: var(--negro); color: var(--blanco);
+    text-align: center; padding: 36px 20px; margin-top: 60px;
+  }
+  .redes {
+    display: flex; justify-content: center; gap: 22px;
+    margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .redes a {
+    color: var(--blanco); text-decoration: none;
+    font-family: sans-serif; font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; border: 1px solid var(--verde-cl);
+    padding: 8px 16px; transition: background 0.2s;
+  }
+  .redes a:hover { background: var(--verde); }
+  footer .copy {
+    font-size: 13px; color: #999;
+    font-family: sans-serif; letter-spacing: 1px;
+  }
+
+  @media (max-width: 800px) {
+    .contenedor { grid-template-columns: 1fr; padding: 0 20px; }
+    aside { position: static; }
+    .titulo-blog { font-size: 30px; letter-spacing: 2px; }
+    header { padding: 20px; gap: 14px; }
+    .foto-perfil { width: 54px; height: 54px; }
+    nav { padding: 0 10px; }
+    nav a { padding: 12px 14px; font-size: 12px; }
+    .titulo-seccion { padding: 40px 24px; }
+    .titulo-seccion h1 { font-size: 36px; }
+    .creacion { padding: 28px 22px; }
+    .creacion h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <!-- FOTO DE PERFIL · mi-foto.jpg es una imagen cuadrada de ~700x700 px (102 KB) -->
+  <img src="mi-foto.jpg" alt="Retrato de Juan Ernesto Carlos" class="foto-perfil">
+  <h1 class="titulo-blog">FIGAR<span>Ó</span></h1>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="analisis.html">Análisis</a>
+  <a href="creacion.html" class="activo">Creación</a>
+  <a href="investigacion.html">Investigación</a>
+  <a href="video.html">Video</a>
+  <a href="sobre-mi.html">Sobre mí</a>
+</nav>
+
+<div class="contenedor">
+
+  <aside>
+    <h3>Últimas publicaciones</h3>
+    <!-- Los enlaces con # son entradas sin página propia todavía. -->
+    <ul>
+      <li><a href="video.html">Video: entrevista memoria histórica<span class="fecha">12 Oct</span></a></li>
+      <li><a href="#">La democracia bajo presión<span class="fecha">05 Oct</span></a></li>
+      <li><a href="#">Poema: "Lo que queda del silencio"<span class="fecha">09 Oct</span></a></li>
+      <li><a href="investigacion.html">Crisis del agua en América Latina<span class="fecha">28 Sep</span></a></li>
+    </ul>
+  </aside>
+
+  <main>
+
+    <section class="titulo-seccion">
+      <div class="prefijo">· Poesía · Cuento · Prosa ·</div>
+      <h1>Creación</h1>
+      <p class="descripcion">Aquí vive lo que no cabe en el análisis. Poemas, cuentos, textos breves y todo lo que nace del impulso de escribir.</p>
+      <div class="linea"></div>
+    </section>
+
+    <section class="lista-creaciones">
+
+      <!-- ENLACES PENDIENTES · todavía no existen las páginas de cada texto.
+           Cuando escribas el poema o el cuento, crea el archivo
+           (creacion-1.html, creacion-2.html...) y cambia href="#" por su nombre. -->
+
+      <a href="#" class="creacion">
+        <div class="tipo">Poema</div>
+        <h2>Lo que queda del silencio</h2>
+        <p class="fragmento">Aquí va un fragmento breve del poema. Dos o tres versos que inviten al lector a entrar. El resto se lee al hacer clic.</p>
+        <div class="meta">9 de octubre, 2026</div>
+      </a>
+
+      <a href="#" class="creacion">
+        <div class="tipo">Cuento corto</div>
+        <h2>La casa de los espejos</h2>
+        <p class="fragmento">Un fragmento del cuento. Algo que atrape, que deje una pregunta abierta. El lector decide si quiere seguir leyendo.</p>
+        <div class="meta">20 de septiembre, 2026</div>
+      </a>
+
+      <a href="#" class="creacion">
+        <div class="tipo">Prosa breve</div>
+        <h2>Notas sobre la ciudad al amanecer</h2>
+        <p class="fragmento">Un pequeño fragmento de prosa poética. Ideal para textos que no son ni cuento ni poema, sino algo intermedio.</p>
+        <div class="meta">8 de septiembre, 2026</div>
+      </a>
+
+      <a href="#" class="creacion">
+        <div class="tipo">Poema</div>
+        <h2>Instrucciones para olvidar</h2>
+        <p class="fragmento">Fragmento del poema. Aquí puedes poner los versos que mejor representen el tono del texto completo.</p>
+        <div class="meta">24 de agosto, 2026</div>
+      </a>
+
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <!-- REDES SOCIALES · pon aquí tus enlaces reales -->
+  <div class="redes">
+    <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://instagram.com/WFIGARO" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/Burrolom" target="_blank" rel="noopener">X</a>
+    <a href="https://facebook.com/CcFigaro" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <p class="copy">© 2026 FIGARÓ — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
