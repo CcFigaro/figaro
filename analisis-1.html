@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El impacto de las redes sociales en la formación del autoconcepto — FIGARÓ</title>
+<meta name="description" content="Artículo de Juan Ernesto Carlos sobre cómo las redes sociales influyen en el autoconcepto: validación social, comparación, estándares de belleza y construcción de la identidad.">
+<meta name="author" content="Juan Ernesto Carlos">
+<meta name="theme-color" content="#1B3A2F">
+<link rel="icon" href="favicon.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="favicon.jpg">
+<link rel="canonical" href="https://ccfigaro.github.io/figaro/analisis-1.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="FIGARÓ">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="El impacto de las redes sociales en la formación del autoconcepto">
+<meta property="og:description" content="Validación social, imagen idealizada y construcción de la identidad: un análisis con encuestas, el Test AF5 y entrevistas en Samaná.">
+<meta property="og:url" content="https://ccfigaro.github.io/figaro/analisis-1.html">
+<meta property="og:image" content="https://ccfigaro.github.io/figaro/analisis-autoconcepto-portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --verde: #1B3A2F; --verde-cl: #2C5A47;
+    --negro: #0A0A0A; --blanco: #FFFFFF;
+    --crema: #F5F3EE; --gris: #6B6B6B; --gris-cl: #E0E0E0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--crema); color: var(--negro); line-height: 1.6;
+  }
+  header {
+    background: var(--negro); color: var(--blanco);
+    padding: 24px 40px; display: flex; align-items: center; gap: 20px;
+  }
+  .foto-perfil {
+    width: 68px; height: 68px; border-radius: 50 %;
+    object-fit: cover; border: 2px solid var(--verde-cl); flex-shrink: 0;
+  }
+  .titulo-blog {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 42px; letter-spacing: 4px; font-weight: 700;
+  }
+  .titulo-blog span { color: var(--verde-cl); }
+  nav {
+    background: var(--verde); padding: 0 40px;
+    display: flex; flex-wrap: wrap; border-bottom: 3px solid var(--negro);
+  }
+  nav a {
+    color: var(--blanco); text-decoration: none; padding: 16px 22px;
+    font-family: sans-serif; font-size: 14px; letter-spacing: 2px;
+    text-transform: uppercase; transition: background 0.2s;
+  }
+  nav a:hover, nav a.activo { background: var(--negro); }
+
+  .contenedor { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+
+  /* MIGAS */
+  .migas {
+    font-family: sans-serif; font-size: 12px; letter-spacing: 1px;
+    padding: 30px 0 0;
+  }
+  .migas a { color: var(--verde); text-decoration: none; }
+  .migas a:hover { text-decoration: underline; }
+  .migas span { color: var(--gris); }
+
+  /* ARTÍCULO */
+  article {
+    background: var(--blanco);
+    border-top: 4px solid var(--negro);
+    margin: 24px 0 60px;
+    overflow: hidden;
+  }
+  .portada-articulo { width: 100 %; display: block; }
+  .portada-articulo img { width: 100 %; height: auto; display: block; }
+
+  .cuerpo-articulo { padding: 48px 56px 56px; }
+
+  .etiqueta {
+    display: inline-block;
+    background: var(--verde); color: var(--blanco);
+    font-family: sans-serif; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; padding: 6px 14px;
+    margin-bottom: 22px;
+  }
+  h1.titulo-articulo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px; line-height: 1.2; color: var(--negro);
+    margin-bottom: 18px;
+  }
+  .subtitulo-articulo {
+    font-size: 20px; font-style: italic; color: var(--verde);
+    line-height: 1.5; margin-bottom: 22px;
+  }
+  .meta-articulo {
+    font-family: sans-serif; font-size: 12.5px; color: var(--gris);
+    letter-spacing: 1px; padding-bottom: 26px; margin-bottom: 34px;
+    border-bottom: 1px solid var(--gris-cl);
+  }
+
+  /* RESUMEN */
+  .resumen {
+    background: var(--crema);
+    border-left: 4px solid var(--verde);
+    padding: 26px 30px;
+    margin-bottom: 26px;
+  }
+  .resumen h2 {
+    font-family: sans-serif; font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--verde);
+    margin-bottom: 14px;
+  }
+  .resumen p { font-size: 16.5px; line-height: 1.75; color: #1a1a1a; }
+
+  .palabras-clave {
+    font-family: sans-serif; font-size: 13px; color: var(--gris);
+    line-height: 1.9; margin-bottom: 40px;
+  }
+  .palabras-clave strong { color: var(--negro); }
+
+  /* CUERPO */
+  .texto p {
+    font-size: 17.5px; line-height: 1.85; color: #1a1a1a;
+    margin-bottom: 22px;
+  }
+  .texto h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px; line-height: 1.3; color: var(--negro);
+    margin: 48px 0 20px;
+    padding-top: 26px; border-top: 1px solid var(--gris-cl);
+  }
+  .texto h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .texto h3 {
+    font-family: sans-serif; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--verde-cl);
+    margin: 34px 0 14px;
+  }
+  .texto strong { color: var(--negro); }
+
+  /* CITA */
+  .cita {
+    border-left: 3px solid var(--verde-cl);
+    padding: 4px 0 4px 22px;
+    margin: 30px 0;
+    font-style: italic; font-size: 18px; color: #444;
+  }
+
+  /* TABLA */
+  .tabla-envoltorio { overflow-x: auto; margin: 30px 0 34px; }
+  table {
+    width: 100 %; border-collapse: collapse;
+    font-family: sans-serif; font-size: 14.5px;
+  }
+  caption {
+    caption-side: top; text-align: left;
+    font-family: sans-serif; font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--verde);
+    padding-bottom: 12px;
+  }
+  th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--gris-cl); }
+  thead th {
+    background: var(--verde); color: var(--blanco);
+    font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+    border-bottom: none;
+  }
+  tbody tr:nth-child(even) { background: var(--crema); }
+  td.num { font-weight: bold; color: var(--verde); white-space: nowrap; }
+  .nota-tabla {
+    font-family: sans-serif; font-size: 12.5px; color: var(--gris);
+    margin-top: -18px; margin-bottom: 30px;
+  }
+
+  /* LISTA DE MEDIDAS */
+  .medidas { list-style: none; margin: 26px 0 30px; }
+  .medidas li {
+    font-size: 17px; line-height: 1.75; color: #1a1a1a;
+    padding: 16px 0 16px 26px; position: relative;
+    border-bottom: 1px dashed var(--gris-cl);
+  }
+  .medidas li:last-child { border-bottom: none; }
+  .medidas li::before {
+    content: ''; position: absolute; left: 0; top: 25px;
+    width: 8px; height: 8px; background: var(--verde);
+  }
+  .medidas strong { color: var(--negro); }
+
+  /* NOTA METODOLÓGICA */
+  .nota-metodologica {
+    background: var(--crema);
+    padding: 28px 30px;
+    margin-top: 48px;
+    font-size: 15.5px; line-height: 1.75; color: #333;
+  }
+  .nota-metodologica h2 {
+    font-family: sans-serif; font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--verde);
+    margin-bottom: 14px; border: none; padding: 0;
+  }
+  .nota-editorial {
+    border-left: 3px solid var(--gris);
+    padding-left: 18px; margin-top: 24px;
+    font-size: 14px; color: var(--gris); font-style: italic;
+  }
+
+  /* DESCARGA */
+  .descarga {
+    margin-top: 44px; padding-top: 30px;
+    border-top: 1px solid var(--gris-cl);
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  }
+  .descarga p {
+    font-family: sans-serif; font-size: 13px; color: var(--gris);
+    margin: 0; flex: 1 1 260px;
+  }
+  .descarga a {
+    background: var(--verde); color: var(--blanco);
+    text-decoration: none; padding: 13px 24px;
+    font-family: sans-serif; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .descarga a:hover { background: var(--negro); }
+
+  /* VOLVER */
+  .volver {
+    display: inline-block; margin: 0 0 60px;
+    font-family: sans-serif; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--verde); text-decoration: none;
+  }
+  .volver:hover { color: var(--negro); }
+
+  footer {
+    background: var(--negro); color: var(--blanco);
+    text-align: center; padding: 36px 20px; margin-top: 60px;
+  }
+  .redes {
+    display: flex; justify-content: center; gap: 22px;
+    margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .redes a {
+    color: var(--blanco); text-decoration: none;
+    font-family: sans-serif; font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; border: 1px solid var(--verde-cl);
+    padding: 8px 16px; transition: background 0.2s;
+  }
+  .redes a:hover { background: var(--verde); }
+  footer .copy {
+    font-size: 13px; color: #999;
+    font-family: sans-serif; letter-spacing: 1px;
+  }
+
+  @media (max-width: 800px) {
+    .titulo-blog { font-size: 30px; letter-spacing: 2px; }
+    header { padding: 20px; gap: 14px; }
+    .foto-perfil { width: 54px; height: 54px; }
+    nav { padding: 0 10px; }
+    nav a { padding: 12px 14px; font-size: 12px; }
+    .contenedor { padding: 0 20px; }
+    .cuerpo-articulo { padding: 30px 22px 36px; }
+    h1.titulo-articulo { font-size: 27px; }
+    .subtitulo-articulo { font-size: 17px; }
+    .texto p { font-size: 16.5px; }
+    .texto h2 { font-size: 22px; margin: 36px 0 16px; }
+    .resumen { padding: 20px 20px; }
+    .resumen p { font-size: 15.5px; }
+    .medidas li { font-size: 16px; }
+    table { font-size: 13px; }
+    th, td { padding: 10px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="mi-foto.jpg" alt="Retrato de Juan Ernesto Carlos" class="foto-perfil">
+  <h1 class="titulo-blog">FIGAR<span>Ó</span></h1>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="analisis.html" class="activo">Análisis</a>
+  <a href="creacion.html">Creación</a>
+  <a href="investigacion.html">Investigación</a>
+  <a href="video.html">Video</a>
+  <a href="sobre-mi.html">Sobre mí</a>
+</nav>
+
+<div class="contenedor">
+
+  <p class="migas"><a href="index.html">Inicio</a> <span>›</span> <a href="analisis.html">Análisis</a> <span>›</span> <span>El impacto de las redes sociales en la formación del autoconcepto</span></p>
+
+  <article>
+
+    <!-- PORTADA DEL ARTÍCULO -->
+    <div class="portada-articulo">
+      <img src="analisis-autoconcepto-portada.jpg" alt="Ilustración de un cerebro conectado a iconos de redes sociales, reacciones y notificaciones">
+    </div>
+
+    <div class="cuerpo-articulo">
+
+      <span class="etiqueta">Análisis · Psicología y sociedad</span>
+
+      <h1 class="titulo-articulo">El impacto de las redes sociales en la formación del autoconcepto</h1>
+      <p class="subtitulo-articulo">Entre la validación social, la imagen idealizada y la construcción de la identidad</p>
+      <p class="meta-articulo">Por Juan Ernesto Carlos · Análisis · Lectura de 15 minutos</p>
+
+      <!-- RESUMEN -->
+      <div class="resumen">
+        <h2>Resumen</h2>
+        <p>Las redes sociales se han convertido en espacios fundamentales para la comunicación, el entretenimiento, el aprendizaje y la construcción de la identidad personal. Sin embargo, también constituyen escenarios en los que circulan modelos idealizados de belleza, éxito y estilos de vida que pueden influir en la manera en que las personas se perciben a sí mismas. El presente artículo analiza el impacto de las redes sociales en la formación del autoconcepto, prestando especial atención a la comparación social, la validación mediante reacciones y comentarios, los estándares de belleza, el contenido de los influencers y las distintas dimensiones del autoconcepto. A partir de los resultados de encuestas, el Test de Autoconcepto Forma 5 (AF5) y entrevistas semiestructuradas, se examina la coexistencia de experiencias positivas y negativas en el entorno digital. Los hallazgos muestran que los «me gusta» y los comentarios constituyen uno de los factores de influencia más reconocidos, mientras que una proporción importante de los participantes declara haber modificado su apariencia por influencia de los contenidos digitales. Asimismo, se identifican diferencias entre las dimensiones emocional, social, física, familiar y académico-profesional del autoconcepto. Se concluye que la relación entre redes sociales y autoconcepto es compleja y depende tanto de las características del contenido como de la interpretación individual. Por ello, se destaca la importancia de la alfabetización digital crítica, la educación emocional y el desarrollo de estrategias que favorezcan una autoimagen saludable.</p>
+      </div>
+
+      <p class="palabras-clave"><strong>Palabras clave:</strong> redes sociales, autoconcepto, comparación social, autoimagen, autoestima, identidad digital, influencers.</p>
+
+      <div class="texto">
+
+        <!-- 1 -->
+        <h2>1. Introducción: cuando la vida digital participa en la construcción de quiénes somos</h2>
+
+        <p>Las redes sociales han transformado la forma en que las personas se relacionan, comparten experiencias y construyen una imagen de sí mismas ante los demás. Lo que anteriormente se desarrollaba principalmente mediante las relaciones familiares, educativas, laborales y comunitarias ahora también ocurre en espacios digitales donde las fotografías, los videos, las opiniones, los comentarios y las reacciones de otros usuarios adquieren una importancia creciente.</p>
+
+        <p>En estos espacios no solo se comparte información. También se proyectan identidades, se buscan reconocimiento y aceptación, se establecen modelos de referencia y se construyen expectativas sobre cómo deberíamos vernos, comportarnos o vivir.</p>
+
+        <p>El autoconcepto, entendido como la percepción que una persona tiene de sí misma, incluyendo sus creencias, sentimientos y evaluaciones sobre su identidad, se forma a partir de experiencias personales y relaciones sociales. Este constructo influye en la manera en que cada individuo se percibe en términos de capacidades, apariencia física y relaciones interpersonales (González Rodríguez, 2022).</p>
+
+        <p>En este contexto, las redes sociales representan un entorno que merece especial atención. Una fotografía publicada puede recibir cientos de reacciones o pasar prácticamente inadvertida. Una persona puede observar diariamente cuerpos considerados perfectos, viajes, bienes materiales y estilos de vida aparentemente exitosos. Aunque conozca el carácter selectivo de estas representaciones, puede terminar utilizándolas como referencia para evaluar su propia realidad.</p>
+
+        <p>La cuestión central no consiste en afirmar que las redes sociales sean perjudiciales por naturaleza. Estas plataformas también facilitan el aprendizaje, la expresión personal, la creación de comunidades y el acceso a contenidos que contribuyen al desarrollo individual. El problema surge cuando la valoración personal comienza a depender excesivamente de la aprobación externa o cuando las representaciones digitales se convierten en estándares difíciles de alcanzar.</p>
+
+        <p>Por ello, analizar el impacto de las redes sociales en la formación del autoconcepto exige observar tanto sus posibles efectos negativos como las oportunidades que ofrecen. También requiere comprender que una misma plataforma puede generar experiencias diferentes según el contenido consumido, las expectativas personales y la relación que cada individuo establece con el entorno digital.</p>
+
+        <!-- 2 -->
+        <h2>2. La validación social: el valor personal frente a los «me gusta»</h2>
+
+        <p>Uno de los hallazgos más relevantes de la investigación es que el <strong>40 %</strong> de los participantes identifica la validación mediante «me gusta» y comentarios como la característica de las redes sociales que más influye en la formación del autoconcepto.</p>
+
+        <p>A este factor le siguen la comparación con otros usuarios y los filtros y la edición de imágenes, ambos señalados por el <strong>18.6 %</strong>. Por su parte, el <strong>15.7 %</strong> identifica la creación de una identidad digital idealizada, mientras que el <strong>7.1 %</strong> destaca la exposición a modelos de belleza idealizados.</p>
+
+        <p>Estos resultados permiten observar que la influencia de las redes sociales no depende exclusivamente de las imágenes que se consumen. También está relacionada con los mecanismos mediante los cuales las personas reciben reconocimiento y valoran la respuesta de los demás.</p>
+
+        <p>Los «me gusta» y los comentarios pueden funcionar como señales de aceptación social. Cuando una publicación recibe muchas reacciones, el usuario puede interpretarlas como una confirmación de que su imagen, sus opiniones o su estilo de vida son valorados. Por el contrario, una respuesta limitada puede generar dudas en quienes atribuyen una importancia considerable al reconocimiento digital.</p>
+
+        <p>Sin embargo, los resultados también muestran una aparente diferencia entre reconocer la influencia de estos mecanismos y admitir que afectan personalmente. El <strong>84.3 %</strong> manifestó que la cantidad de «me gusta» o comentarios que recibe no le afecta.</p>
+
+        <p>Esta diferencia resulta importante. Reconocer que la validación digital puede influir en otras personas no significa necesariamente experimentar una dependencia personal de ella. Además, no puede concluirse que quienes afirman no sentirse afectados estén ocultando una inseguridad o desconozcan su propio comportamiento.</p>
+
+        <p>Lo que sí puede plantearse es que la influencia digital no siempre se manifiesta de manera explícita. Puede expresarse en la selección de las fotografías que se publican, en la decisión de eliminar contenido que recibe pocas reacciones o en la tendencia a presentar únicamente aquellos aspectos de la vida que se consideran socialmente atractivos. Estas posibilidades requieren investigación específica y no deben asumirse como comportamientos demostrados en todos los participantes.</p>
+
+        <p>La cuestión de fondo es qué sucede cuando la valoración de uno mismo comienza a depender de indicadores externos de reconocimiento. Si la percepción personal se construye principalmente a partir de la aprobación de los demás, el autoconcepto puede volverse vulnerable a las respuestas variables de las audiencias digitales.</p>
+
+        <p>Por tanto, el desafío no consiste en eliminar la interacción social, sino en evitar que las métricas de popularidad se conviertan en el principal criterio para determinar el valor personal.</p>
+
+        <!-- 3 -->
+        <h2>3. Comparación social: vivir frente a una realidad seleccionada</h2>
+
+        <p>Otro de los factores relevantes es la comparación con otros usuarios. En las redes sociales, las personas no suelen mostrar la totalidad de sus experiencias, sino una selección de momentos, logros, imágenes y acontecimientos que consideran apropiados para compartir.</p>
+
+        <p>El resultado es un entorno donde pueden compararse realidades cotidianas, con sus dificultades y limitaciones, frente a representaciones cuidadosamente seleccionadas de la vida de otras personas.</p>
+
+        <p>La teoría de la comparación social de Festinger (1954) plantea que las personas evalúan sus opiniones y habilidades mediante la comparación con los demás, especialmente cuando no existen criterios objetivos claros para realizar esa evaluación. Este proceso contribuye a interpretar la propia posición y a construir una percepción de uno mismo.</p>
+
+        <p>En el entorno digital, sin embargo, la comparación puede producirse sobre una base desigual. El usuario compara su vida cotidiana con fotografías editadas, logros seleccionados, viajes, bienes materiales o cuerpos presentados bajo condiciones específicas de iluminación, edición y preparación.</p>
+
+        <p>La investigación encontró que el <strong>37.1 %</strong> de los participantes manifestó que su reacción emocional al compararse con otras personas depende del tipo de contenido observado. Un <strong>47.2 %</strong> indicó que la comparación no afecta su autoestima, mientras que un <strong>7.1 %</strong> reconoció sentirse más inseguro respecto a su apariencia o sus logros. Por otra parte, el <strong>8.6 %</strong> señaló experimentar mayor motivación y seguridad.</p>
+
+        <p>Estos resultados muestran que la comparación social no tiene una consecuencia uniforme. Puede generar inspiración y motivación, pero también puede producir sentimientos de insuficiencia cuando la persona interpreta que su propia vida se encuentra por debajo de los modelos que observa.</p>
+
+        <p>El testimonio de una de las participantes entrevistadas permite comprender mejor este proceso. La entrevistada explicó que no le gustaba publicar fotografías con la misma ropa porque había desarrollado la percepción de que Instagram era un espacio para mostrar una vida de riqueza y abundancia. Su preocupación no se relacionaba necesariamente con recibir comentarios negativos, sino con la idea de que repetir una vestimenta no encajaba con la imagen que consideraba apropiada para esa plataforma.</p>
+
+        <p>Esta experiencia ilustra cómo los modelos digitales pueden influir en las expectativas personales sobre la manera de presentarse ante los demás. La presión no siempre aparece como una exigencia directa de otros usuarios; en ocasiones, puede surgir de las propias expectativas que se construyen a partir de la observación continua.</p>
+
+        <p>La comparación social también debe analizarse desde una perspectiva cultural y económica. Las imágenes de consumo, viajes y estilos de vida pueden transmitir la idea de que determinadas experiencias constituyen señales de éxito personal. Cuando estas representaciones se convierten en referencias dominantes, las diferencias de recursos y oportunidades pueden interpretarse erróneamente como diferencias de valor individual.</p>
+
+        <p>Por eso, comprender que las redes sociales muestran una parte seleccionada de la realidad constituye una herramienta importante para desarrollar una relación más equilibrada con ellas.</p>
+
+        <!-- 4 -->
+        <h2>4. Estándares de belleza y transformación de la imagen corporal</h2>
+
+        <p>La apariencia física representa una de las dimensiones más visibles del autoconcepto en el entorno digital. Los filtros, las herramientas de edición, las fotografías cuidadosamente preparadas y los contenidos relacionados con la estética contribuyen a difundir determinados modelos de belleza.</p>
+
+        <p>La investigación encontró que el <strong>75.7 %</strong> de los participantes manifestó que las fotografías de modelos e influencers, la publicidad estética y los filtros digitales no afectan su percepción corporal, porque son conscientes de que ese contenido puede ser irreal.</p>
+
+        <p>No obstante, el <strong>34.3 %</strong> reconoció haber realizado algún cambio en su apariencia física debido a los estándares observados en las redes sociales. Asimismo, un <strong>18.6 %</strong> manifestó haber considerado realizar cambios estéticos sin haberlos llevado a cabo.</p>
+
+        <p>Estos resultados permiten identificar una cuestión importante: reconocer que una imagen está editada no necesariamente elimina su influencia sobre los gustos, las aspiraciones o las decisiones personales.</p>
+
+        <p>Una persona puede comprender que determinadas fotografías no representan la realidad y, aun así, incorporar ciertas características estéticas como modelos deseables. La influencia puede producirse mediante la familiarización constante con determinadas apariencias, la identificación con una figura pública o el deseo de experimentar con el propio estilo.</p>
+
+        <p>En este sentido, los estándares de belleza deben entenderse como construcciones socioculturales que cambian según el contexto histórico y social. Naomi Wolf (1991) cuestiona la forma en que los ideales de belleza pueden funcionar como exigencias sociales y vincular el atractivo físico con el valor que se atribuye a las personas.</p>
+
+        <p>Las redes sociales amplían la circulación de estos modelos y permiten que los usuarios no solo los reciban, sino que también los reproduzcan y compartan. De esta manera, las personas pueden convertirse simultáneamente en consumidoras y difusoras de representaciones estéticas.</p>
+
+        <p>La entrevista realizada a una participante ofrece un ejemplo concreto. La entrevistada relató que comenzó a utilizar maquillaje después de observar a una joven en TikTok cuyo estilo le resultaba atractivo y que también decidió alisarse el cabello tras exponerse a contenidos similares. Posteriormente, al no sentirse satisfecha con el resultado, decidió no repetir esa experiencia.</p>
+
+        <p>El testimonio muestra cómo la exposición a determinados modelos puede convertirse en una motivación para modificar la apariencia. Sin embargo, también evidencia que las personas conservan capacidad de decisión: experimentar con un estilo no significa necesariamente aceptarlo de manera permanente.</p>
+
+        <p>Por ello, es importante distinguir entre la expresión personal, la experimentación estética y los cambios motivados por una insatisfacción persistente. No toda modificación de la apariencia representa un problema psicológico, del mismo modo que la satisfacción declarada con el propio cuerpo no excluye la posibilidad de experimentar presiones relacionadas con los modelos de belleza.</p>
+
+        <p>La investigación también encontró que un <strong>37.1 %</strong> de los participantes manifestó disposición a realizar algún procedimiento estético, mientras que el <strong>62.9 %</strong> expresó satisfacción con su apariencia actual y ausencia de intención de recurrir a estos procedimientos. La disposición a modificar el cuerpo, por sí sola, no constituye evidencia de un trastorno de imagen corporal, pero resulta relevante para comprender el lugar que ocupan los estándares estéticos en las aspiraciones personales.</p>
+
+        <p>En consecuencia, la educación sobre la imagen corporal debería promover la diversidad, el pensamiento crítico y la comprensión de que las fotografías digitales no constituyen parámetros universales de belleza.</p>
+
+        <!-- 5 -->
+        <h2>5. Los influencers y la construcción de la identidad personal</h2>
+
+        <p>Los influencers y creadores de contenido ocupan un lugar destacado en la circulación de modelos de comportamiento, apariencia y éxito. Su influencia no depende únicamente de la cantidad de seguidores, sino también de la credibilidad que construyen, la relación que establecen con su audiencia y la identificación que generan con sus experiencias.</p>
+
+        <p>Los resultados de la investigación muestran que el contenido más seguido corresponde a comedia y humor, con un <strong>17.1 %</strong>, seguido de emprendimiento y éxito personal, con un <strong>15.7 %</strong>, y fitness y salud, con un <strong>14.3 %</strong>. Los contenidos de viajes y estilo de vida representan un <strong>12.9 %</strong>, mientras que el contenido educativo y divulgativo alcanza el <strong>10 %</strong>.</p>
+
+        <p>Al analizar la percepción de la influencia de estas figuras sobre la identidad personal, el <strong>72.9 %</strong> de los participantes señaló que su contenido no tenía un impacto significativo. Por otra parte, el <strong>22.8 %</strong> afirmó que le había ayudado a desarrollar una identidad más segura, mientras que el <strong>4.3 %</strong> manifestó que le había generado inseguridad respecto a quién era.</p>
+
+        <p>La distribución demuestra que la influencia percibida puede ser positiva, negativa o limitada. Algunas personas encuentran en estos contenidos herramientas de aprendizaje, motivación y desarrollo de habilidades. Otras pueden experimentar presión al comparar sus circunstancias con las representaciones idealizadas de éxito, consumo o apariencia.</p>
+
+        <p>Una de las entrevistas realizadas muestra la dimensión positiva de esta relación. El participante explicó que consume principalmente contenido educativo, deportivo, informativo y de crecimiento personal. También manifestó que estos materiales le han ayudado a mejorar su carácter y a enfrentar situaciones de presión en el trabajo.</p>
+
+        <p>Esta experiencia contrasta con el testimonio de la participante que describió cambios en su apariencia inspirados en contenidos de TikTok. Ambos casos muestran que el efecto percibido no depende únicamente de utilizar una red social, sino también del tipo de contenido consumido y del significado que adquiere para cada persona.</p>
+
+        <p>Por tanto, sería un error considerar a todos los influencers como agentes perjudiciales o asumir que su contenido produce necesariamente inseguridad. Lo importante es analizar qué modelos promueven, qué expectativas generan y cómo se relacionan con las necesidades y circunstancias de sus audiencias.</p>
+
+        <p>También resulta necesario reconocer que la identidad personal no se construye exclusivamente en el espacio digital. Las relaciones familiares, las experiencias laborales, la educación, las amistades y las condiciones de vida continúan formando parte de este proceso.</p>
+
+        <p>Las redes sociales interactúan con esos elementos, pero no los sustituyen por completo.</p>
+
+        <!-- 6 -->
+        <h2>6. Las dimensiones del autoconcepto: una realidad que va más allá de la apariencia</h2>
+
+        <p>El autoconcepto es multidimensional. Una persona puede tener una percepción positiva de sus capacidades profesionales, sus relaciones familiares o su apariencia física, mientras experimenta dificultades para reconocer, comprender o gestionar sus emociones.</p>
+
+        <p>Para examinar estas diferencias, la investigación utilizó el Test de Autoconcepto Forma 5 (AF5), que evalúa las dimensiones académico-profesional, social, emocional, familiar y física.</p>
+
+        <p>Los resultados generales reportados fueron los siguientes:</p>
+
+        <div class="tabla-envoltorio">
+          <table>
+            <caption>Puntuaciones medias del Test AF5 por dimensión</caption>
+            <thead>
+              <tr>
+                <th>Dimensión</th>
+                <th>Puntuación media reportada</th>
+                <th>Nivel indicado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Académico-profesional</td><td class="num">8.2</td><td>Alto</td></tr>
+              <tr><td>Social</td><td class="num">7.0</td><td>Alto</td></tr>
+              <tr><td>Emocional</td><td class="num">6.2</td><td>Medio</td></tr>
+              <tr><td>Familiar</td><td class="num">9.0</td><td>Alto</td></tr>
+              <tr><td>Física</td><td class="num">7.8</td><td>Alto</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="nota-tabla">Fuente: resultados del Test de Autoconcepto Forma 5 (AF5) presentados en la investigación.</p>
+
+        <p>La dimensión familiar presentó la puntuación más elevada, con 9.0, seguida de la académico-profesional, con 8.2. La dimensión física alcanzó 7.8, mientras que la social registró 7.0. La dimensión emocional obtuvo la puntuación más baja, con 6.2.</p>
+
+        <p>Estos resultados muestran que la percepción personal no puede reducirse a la autoestima o a la apariencia física. La valoración que una persona hace de sí misma puede variar entre los diferentes ámbitos de su vida.</p>
+
+        <p>La puntuación elevada de la dimensión familiar sugiere una percepción favorable de este ámbito entre los participantes. Por su parte, el resultado académico-profesional indica que, en términos generales, los participantes valoran positivamente sus capacidades en esta área.</p>
+
+        <p>La dimensión emocional merece especial atención por presentar la puntuación media más baja. Esto no significa que los participantes tengan necesariamente problemas clínicos, sino que, dentro de las dimensiones evaluadas, el área emocional muestra una valoración relativamente menos favorable.</p>
+
+        <p>También se observaron diferencias entre los grupos de edad incluidos en el estudio. El grupo de 25 a 29 años obtuvo la puntuación emocional más baja, con 5.6, y una puntuación social de 6.8. En la dimensión física, este mismo grupo registró 7.2, frente a 8.4 en el grupo de 35 años.</p>
+
+        <p>Estas diferencias constituyen tendencias descriptivas que merecen atención, pero no permiten concluir que la edad o una plataforma específica sean responsables de ellas. Para comprobar si las diferencias son estadísticamente significativas y establecer asociaciones entre el uso de redes sociales y las puntuaciones del AF5, sería necesario realizar análisis adicionales.</p>
+
+        <p>Aun con esta limitación, los resultados permiten destacar una idea fundamental: fortalecer una autoimagen saludable requiere atender tanto la relación con el cuerpo como la seguridad personal, las habilidades sociales y la gestión emocional.</p>
+
+        <!-- 7 -->
+        <h2>7. Tiempo de uso y estrategias para mantener una autoimagen saludable</h2>
+
+        <p>El tiempo dedicado a las redes sociales constituye otro elemento importante para comprender la relación entre el entorno digital y la vida cotidiana.</p>
+
+        <p>Según los resultados, el <strong>38.6 %</strong> de los participantes manifestó utilizar redes sociales entre una y tres horas diarias. Un <strong>21.4 %</strong> señaló que dedica entre cuatro y seis horas al día, mientras que un <strong>20 %</strong> afirmó superar las seis horas. El <strong>20 %</strong> restante indicó utilizarlas menos de una hora diaria.</p>
+
+        <p>En conjunto, el <strong>41.4 %</strong> dedica al menos cuatro horas al día a estas plataformas.</p>
+
+        <p>Este dato muestra una exposición considerable al entorno digital en una parte importante de la muestra. Sin embargo, el tiempo de uso no debe interpretarse de manera aislada como prueba de dependencia o de un problema psicológico. También es necesario considerar las actividades que se realizan, los motivos de uso, las consecuencias en la vida cotidiana y la capacidad de controlar el tiempo dedicado a las plataformas.</p>
+
+        <p>La investigación identificó otro hallazgo relevante: el <strong>42.9 %</strong> de los participantes manifestó no aplicar ninguna estrategia específica para mantener una autoimagen saludable frente a la influencia de las redes sociales.</p>
+
+        <p>Entre quienes sí aplican medidas, un <strong>18.6 %</strong> señaló que evita compararse con otras personas y otro <strong>18.6 %</strong> indicó que reflexiona sobre la influencia de las redes en su percepción personal. Un <strong>10 %</strong> filtra el contenido que consume y otro <strong>10 %</strong> reduce el tiempo de uso.</p>
+
+        <p>Estos resultados evidencian una oportunidad para promover prácticas de autorregulación y consumo crítico de contenidos digitales.</p>
+
+        <p>Entre las estrategias identificadas por los propios participantes, el <strong>46.4 %</strong> consideró que ofrecer recursos educativos sobre salud mental y autoestima constituye la medida más efectiva para mejorar la autoimagen. Un <strong>20.3 %</strong> destacó la promoción de contenido diverso y realista, otro <strong>20.3 %</strong> señaló la regulación de la publicidad que promueve estándares de belleza irreales y un <strong>13 %</strong> priorizó limitar los filtros y las herramientas de edición extrema.</p>
+
+        <p>Las respuestas sugieren que la prevención no debería centrarse exclusivamente en reducir el tiempo frente a la pantalla. También debe abordar la calidad del contenido, la interpretación de los mensajes y la capacidad de reconocer cuándo una comparación está afectando el bienestar personal.</p>
+
+        <p>En este sentido, algunas medidas prácticas son:</p>
+
+        <ul class="medidas">
+          <li><strong>Desarrollar una mirada crítica:</strong> reconocer que las imágenes y los estilos de vida publicados representan una selección de la realidad.</li>
+          <li><strong>Regular el tiempo de uso:</strong> utilizar herramientas digitales para identificar patrones de consumo y establecer límites cuando sea necesario.</li>
+          <li><strong>Filtrar los contenidos:</strong> priorizar cuentas que promuevan diversidad corporal, información confiable, respeto y bienestar emocional.</li>
+          <li><strong>Evitar las comparaciones destructivas:</strong> comprender que las circunstancias, los recursos y las experiencias personales no son iguales para todos.</li>
+          <li><strong>Fortalecer la educación emocional:</strong> desarrollar autoconocimiento, autorregulación, empatía y capacidad para afrontar las presiones sociales.</li>
+          <li><strong>Promover experiencias fuera del entorno digital:</strong> dedicar tiempo a las relaciones personales, la actividad física, la lectura, el aprendizaje y otras actividades significativas.</li>
+        </ul>
+
+        <p>Estas estrategias no buscan eliminar la presencia de las redes sociales en la vida cotidiana, sino favorecer una relación más consciente con ellas.</p>
+
+        <!-- 8 -->
+        <h2>8. Conclusiones: construir una relación más consciente con el entorno digital</h2>
+
+        <p>Los resultados analizados permiten concluir que las redes sociales constituyen un entorno relevante para comprender la formación del autoconcepto. La validación mediante «me gusta» y comentarios, la comparación social, los filtros digitales, los estándares de belleza y los contenidos de los influencers aparecen como elementos que los participantes reconocen en sus experiencias digitales.</p>
+
+        <p>Uno de los hallazgos más importantes es la coexistencia de una percepción generalmente favorable de varias dimensiones del autoconcepto con comportamientos declarados de modificación de la apariencia y diferencias en la dimensión emocional. Esto indica que la relación con uno mismo no puede comprenderse mediante una sola pregunta o una única puntuación.</p>
+
+        <p>Asimismo, la investigación muestra que la influencia de las redes sociales puede manifestarse de distintas maneras. En algunos casos, los contenidos digitales motivan cambios estéticos o generan expectativas sobre cómo debería presentarse una persona. En otros, proporcionan conocimientos, motivación y recursos para mejorar habilidades personales.</p>
+
+        <p>Por tanto, las redes sociales no deben interpretarse como espacios que producen los mismos efectos en todos los usuarios. Su influencia percibida depende de la naturaleza del contenido, la interpretación individual y las circunstancias en las que se desarrolla la experiencia digital.</p>
+
+        <p>Otro hallazgo relevante es que una proporción considerable de participantes afirma no utilizar estrategias específicas para mantener una autoimagen saludable. Esta situación refuerza la importancia de promover la alfabetización digital crítica, la educación emocional y la autorregulación del tiempo de uso.</p>
+
+        <p>La construcción de una identidad saludable requiere reconocer que el valor personal no depende exclusivamente de la apariencia, la popularidad digital, los bienes materiales o la aprobación externa. También implica reconocer las propias capacidades, aceptar las diferencias individuales y comprender que las representaciones publicadas en redes sociales no constituyen una medida completa de la vida de los demás.</p>
+
+        <p>En consecuencia, el desafío no consiste simplemente en abandonar las redes sociales, sino en desarrollar las herramientas necesarias para utilizarlas sin convertirlas en el principal criterio de valoración personal.</p>
+
+        <p>La investigación ofrece elementos útiles para reflexionar sobre estos procesos y destaca la necesidad de continuar estudiando la relación entre el uso de plataformas digitales, la percepción corporal, la identidad y el bienestar emocional. Futuras investigaciones con muestras más amplias, análisis estadísticos de las asociaciones entre variables y un mayor número de entrevistas permitirían profundizar en estas relaciones y evaluar estrategias de prevención.</p>
+
+        <p>En definitiva, promover una relación saludable con las redes sociales implica fortalecer la capacidad de pensar críticamente, reconocer la diversidad de experiencias humanas y construir un autoconcepto que no dependa exclusivamente de las imágenes, las tendencias o las expectativas que circulan en el entorno digital.</p>
+
+      </div>
+
+      <!-- NOTA METODOLÓGICA -->
+      <div class="nota-metodologica">
+        <h2>Nota metodológica</h2>
+        <p>Este artículo se elaboró a partir de una investigación de enfoque mixto y diseño explicativo secuencial realizada en la zona rural del municipio de Santa Bárbara de Samaná, provincia Samaná, República Dominicana, durante 2025. El estudio incluyó a 70 participantes y utilizó encuestas estructuradas, el Test de Autoconcepto Forma 5 (AF5) y dos entrevistas semiestructuradas. La selección de los participantes se realizó mediante muestreo no probabilístico por conveniencia. Por esta razón, los resultados describen las experiencias de la muestra estudiada y no deben generalizarse automáticamente a toda la población.</p>
+        <p class="nota-editorial">Nota editorial: las cifras y las interpretaciones se basan en los resultados presentados en la tesis original. Antes de publicar el artículo, se recomienda verificar las puntuaciones del AF5, las cifras porcentuales y las referencias bibliográficas completas. Las asociaciones descritas no deben interpretarse como demostraciones de causalidad.</p>
+      </div>
+
+      <!-- DESCARGA -->
+      <div class="descarga">
+        <p>Documento original en PDF (12 páginas, 122 KB).</p>
+        <a href="Document.pdf" download>Descargar PDF</a>
+      </div>
+
+    </div>
+  </article>
+
+  <a href="analisis.html" class="volver">← Volver a Análisis</a>
+
+</div>
+
+<footer>
+  <div class="redes">
+    <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://instagram.com/WFIGARO" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/Burrolom" target="_blank" rel="noopener">X</a>
+    <a href="https://facebook.com/CcFigaro" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <p class="copy">© 2026 FIGARÓ — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

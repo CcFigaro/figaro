@@ -121,6 +121,23 @@
   }
   .analisis:hover .leer { color: var(--negro); }
 
+  /* Tarjeta con imagen de portada */
+  .analisis.con-imagen {
+    padding: 0; display: grid;
+    grid-template-columns: 300px 1fr;
+    overflow: hidden;
+  }
+  .analisis.con-imagen .miniatura-analisis {
+    position: relative; overflow: hidden; min-height: 100%;
+  }
+  .analisis.con-imagen .miniatura-analisis img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.3s;
+  }
+  .analisis.con-imagen:hover .miniatura-analisis img { transform: scale(1.05); }
+  .analisis.con-imagen .contenido-analisis { padding: 30px 34px; }
+  .analisis.con-imagen h2 { font-size: 25px; }
+
   /* Aviso de sección en preparación */
   .aviso {
     background: var(--blanco);
@@ -165,6 +182,9 @@
     .titulo-seccion h1 { font-size: 28px; }
     .analisis { padding: 22px 22px; }
     .analisis h2 { font-size: 21px; }
+    .analisis.con-imagen { grid-template-columns: 1fr; padding: 0; }
+    .analisis.con-imagen .miniatura-analisis { min-height: 200px; }
+    .analisis.con-imagen .contenido-analisis { padding: 22px 22px; }
     .aviso { padding: 32px 22px; }
   }
 </style>
@@ -213,10 +233,19 @@
       </a>
       -->
 
-      <div class="aviso">
-        <h3>Aquí irán mis análisis</h3>
-        <p>Todavía no he publicado textos en esta sección. Mientras tanto, puedes ver mis videos en YouTube.</p>
-      </div>
+      <!-- ARTÍCULO PUBLICADO -->
+      <a href="analisis-1.html" class="analisis con-imagen">
+        <div class="miniatura-analisis">
+          <img src="analisis-autoconcepto-miniatura.jpg" alt="Ilustración de un cerebro conectado a iconos de redes sociales y reacciones">
+        </div>
+        <div class="contenido-analisis">
+          <div class="tipo">Análisis · Psicología y sociedad</div>
+          <h2>El impacto de las redes sociales en la formación del autoconcepto</h2>
+          <div class="meta">Por Juan Ernesto Carlos · Lectura de 15 minutos · 12 páginas</div>
+          <p class="resumen"><strong>Resumen.</strong> A partir de encuestas, el Test de Autoconcepto Forma 5 (AF5) y entrevistas semiestructuradas, este trabajo examina cómo la validación mediante «me gusta», la comparación social, los estándares de belleza y el contenido de los influencers inciden en la manera en que las personas se perciben a sí mismas. Los hallazgos muestran la coexistencia de experiencias positivas y negativas, y la importancia de la alfabetización digital crítica y la educación emocional.</p>
+          <span class="leer">Leer análisis completo →</span>
+        </div>
+      </a>
 
     </section>
 
