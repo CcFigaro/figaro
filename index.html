@@ -167,6 +167,67 @@
   }
 
   /* PIE */
+  /* ===== ÚLTIMA PUBLICACIÓN (puerta de entrada) ===== */
+  .ultima-publicacion { margin-bottom: 60px; }
+
+  .cabecera-bloque {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .fecha-bloque {
+    font-family: sans-serif; font-size: 11.5px; color: var(--gris);
+    letter-spacing: 1px; margin-bottom: 24px;
+  }
+
+  .publicacion {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    background: var(--blanco);
+    border-top: 4px solid var(--negro);
+    border-bottom: 4px solid var(--verde);
+    text-decoration: none; color: inherit;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .publicacion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  }
+  .publicacion .miniatura-publicacion {
+    position: relative; overflow: hidden; background: #000;
+  }
+  .publicacion .miniatura-publicacion img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.3s;
+  }
+  .publicacion:hover .miniatura-publicacion img { transform: scale(1.05); }
+
+  .publicacion .texto-publicacion { padding: 26px 30px; }
+  .publicacion .categoria {
+    font-family: sans-serif; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--verde-cl); margin-bottom: 10px;
+  }
+  .publicacion h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px; line-height: 1.3; color: var(--negro);
+    margin-bottom: 10px;
+  }
+  .publicacion p {
+    font-size: 15.5px; line-height: 1.65; color: #444; margin-bottom: 14px;
+  }
+  .publicacion .ir {
+    font-family: sans-serif; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--verde); font-weight: bold;
+  }
+  .publicacion:hover .ir { color: var(--negro); }
+
+  .enlace-seccion {
+    font-family: sans-serif; font-size: 12px; color: var(--gris);
+    letter-spacing: 1px; margin-top: 16px;
+  }
+  .enlace-seccion a { color: var(--verde); text-decoration: none; }
+  .enlace-seccion a:hover { text-decoration: underline; }
+
   footer {
     background: var(--negro); color: var(--blanco);
     text-align: center; padding: 36px 20px; margin-top: 60px;
@@ -199,6 +260,12 @@
     .bienvenida h1 { font-size: 26px; }
     .bienvenida p { font-size: 16.5px; }
     .grid-videos { grid-template-columns: 1fr; }
+    .publicacion { grid-template-columns: 1fr; }
+    .publicacion .miniatura-publicacion { max-height: 220px; }
+    .publicacion .texto-publicacion { padding: 20px 22px; }
+    .publicacion h3 { font-size: 20px; }
+    .publicacion p { font-size: 14.5px; }
+    .fecha-bloque { margin-bottom: 0; }
   }
 </style>
 </head>
@@ -231,37 +298,40 @@
     <p>Empiezo publicando video. Los textos irán llegando poco a poco.</p>
   </section>
 
-  <!-- VIDEOS PUBLICADOS -->
-  <h2 class="titulo-bloque">Videos publicados</h2>
-  <section class="grid-videos">
+  <!-- ============================================================
+       ÚLTIMA PUBLICACIÓN · PUERTA DE ENTRADA
 
-    <!-- VIDEO 1 · Shorts vertical -->
-    <a href="https://www.youtube.com/watch?v=9m0aSufi0d0" target="_blank" rel="noopener" class="video-card vertical">
-      <div class="miniatura">
-        <img src="https://img.youtube.com/vi/9m0aSufi0d0/oar2.jpg" alt="Análisis sobre Marco Rubio y la política antiterrorista de Estados Unidos">
+       Aquí se muestra SIEMPRE lo más reciente, EXCEPTO lo de la
+       sección Creación (los textos literarios no entran aquí).
+
+       CUANDO PUBLIQUES ALGO NUEVO:
+       1. Copia el bloque <a class="publicacion"> completo de abajo.
+       2. Cámbialo por el de la publicación anterior.
+       3. Actualiza: fecha, categoría, título, resumen y el href
+          (a donde lleva el clic).
+
+       Orden de prioridad: la fecha más reciente primero.
+       ============================================================ -->
+  <div class="ultima-publicacion">
+    <div class="cabecera-bloque">
+      <h2 class="titulo-bloque">Última publicación</h2>
+      <span class="fecha-bloque">19 de octubre, 2026</span>
+    </div>
+
+    <a href="analisis-1.html" class="publicacion">
+      <div class="miniatura-publicacion">
+        <img src="analisis-autoconcepto-miniatura.jpg" alt="Ilustración de un cerebro conectado a iconos de redes sociales">
       </div>
-      <div class="info">
-        <div class="categoria">Análisis · Video</div>
-        <h3>Análisis sobre Marco Rubio y la política antiterrorista de Estados Unidos</h3>
-        <p>Comentario sobre el anuncio que centra los esfuerzos antiterroristas en grupos de izquierda.</p>
-        <div class="meta">Ver en YouTube →</div>
+      <div class="texto-publicacion">
+        <div class="categoria">Análisis · Psicología y sociedad</div>
+        <h3>El impacto de las redes sociales en la formación del autoconcepto</h3>
+        <p>Validación social, comparación e imagen idealizada: cómo el entorno digital participa en la manera en que nos percibimos.</p>
+        <div class="ir">Leer el análisis →</div>
       </div>
     </a>
 
-    <!-- VIDEO 2 · Shorts vertical -->
-    <a href="https://www.youtube.com/watch?v=X5oxpFMd2dM" target="_blank" rel="noopener" class="video-card vertical">
-      <div class="miniatura">
-        <img src="https://img.youtube.com/vi/X5oxpFMd2dM/oar2.jpg" alt="Comentario sobre los cacerolazos y la protesta en la Plaza de la Bandera">
-      </div>
-      <div class="info">
-        <div class="categoria">Análisis · Video</div>
-        <h3>Los cacerolazos y la protesta en la Plaza de la Bandera</h3>
-        <p>Lectura de la protesta en Panamá y de por qué pierde fuerza con el paso de los días.</p>
-        <div class="meta">Ver en YouTube →</div>
-      </div>
-    </a>
-
-  </section>
+    <p class="enlace-seccion">Publicado en <a href="analisis.html">Análisis</a></p>
+  </div>
 
 </div>
 
