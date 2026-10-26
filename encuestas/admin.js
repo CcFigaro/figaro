@@ -400,7 +400,8 @@
   }
 
   function shareUrl(survey) {
-    var link = new URL('responder.html', window.location.href);
+    var config = window.FIGARO_SURVEYS || {};
+    var link = new URL('encuestas/responder.html', config.siteUrl || window.location.href);
     link.searchParams.set('id', survey.public_id);
     return link.href;
   }

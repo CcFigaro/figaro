@@ -4,10 +4,10 @@ El sitio estático de GitHub Pages no guarda contraseñas ni respuestas. Esta se
 
 ## Preparación única
 
-1. Crea un proyecto en Supabase y copia su **Project URL** y la clave pública **anon/publishable** en `config.js`. Nunca incluyas una clave `service_role` en este sitio.
+1. La URL pública de FIGARÓ está definida en `config.js` como `https://ccfigaro.github.io/figaro/`; los enlaces compartidos apuntarán allí. Crea un proyecto en Supabase y copia su **Project URL** y la clave pública **anon/publishable** en ese archivo. Nunca incluyas una clave `service_role` en este sitio.
 2. En Supabase, abre **Authentication → Providers / Sign-in** y desactiva el registro público. Crea una sola cuenta administradora desde el panel de Supabase.
 3. Ejecuta `supabase-schema.sql` en el SQL Editor. Copia el **User UID** de la cuenta administradora desde Authentication y sustituye el UUID de ejemplo del `INSERT` comentado al final del SQL; luego ejecuta ese `INSERT`.
-4. En **Authentication → URL Configuration**, agrega el dominio del sitio a la lista de URLs permitidas, por ejemplo `https://ccfigaro.github.io`.
+4. En **Authentication → URL Configuration**, agrega `https://ccfigaro.github.io` a **Site URL** y a la lista de URLs permitidas.
 5. Publica los archivos del repositorio en GitHub Pages. La administración estará en `/figaro/encuestas/`; cada formulario público tendrá su propio enlace `/figaro/encuestas/responder.html?id=...`.
 
 ## Uso
