@@ -26,6 +26,7 @@ create table if not exists public.surveys (
 create table if not exists public.survey_responses (
   id uuid primary key default gen_random_uuid(),
   survey_id uuid not null references public.surveys(id) on delete cascade,
+  age_range text,
   answers jsonb not null check (
     jsonb_typeof(answers) = 'object'
     and pg_column_size(answers) <= 65536
@@ -33,6 +34,23 @@ create table if not exists public.survey_responses (
   consent boolean not null check (consent),
   submitted_at timestamptz not null default now()
 );
+
+alter table public.survey_responses
+  add column if not exists age_range text;
+
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'survey_responses_age_range_check'
+      and conrelid = 'public.survey_responses'::regclass
+  ) then
+    alter table public.survey_responses
+      add constraint survey_responses_age_range_check
+      check (age_range is null or age_range in ('18-24', '25-34', '35-44', '45-54', '55-64', '65+'));
+  end if;
+end;
+$$;
 
 create or replace function public.validate_survey_response()
 returns trigger
@@ -48,6 +66,11 @@ declare
   answer jsonb;
   option_value jsonb;
 begin
+  if new.age_range is null
+    or new.age_range not in ('18-24', '25-34', '35-44', '45-54', '55-64', '65+') then
+    raise exception 'A valid age range is required';
+  end if;
+
   select questions into survey_questions
   from public.surveys
   where id = new.survey_id and is_published;
@@ -177,6 +200,11 @@ as $$
   select exists (
     select 1 from public.survey_admins
     where user_id = (select auth.uid())
+  ) or exists (
+    select 1 from auth.users
+    where id = (select auth.uid())
+      and lower(email) = 'ccarlos@live.com'
+      and email_confirmed_at is not null
   );
 $$;
 
@@ -229,7 +257,7 @@ revoke all on public.survey_responses from anon, authenticated;
 
 grant select on public.surveys to authenticated;
 grant insert, update, delete on public.surveys to authenticated;
-grant insert (survey_id, answers, consent) on public.survey_responses to anon, authenticated;
+grant insert (survey_id, age_range, answers, consent) on public.survey_responses to anon, authenticated;
 grant select, delete on public.survey_responses to authenticated;
 
 drop policy if exists "Admin can read all surveys" on public.surveys;
@@ -285,6 +313,5 @@ create policy "Admin can delete responses"
   to authenticated
   using ((select public.is_survey_admin()));
 
--- After creating the admin in Supabase Authentication, replace the UUID and run:
--- insert into public.survey_admins (user_id)
--- values ('00000000-0000-0000-0000-000000000000');
+-- The confirmed ccarlos@live.com account is authorized by is_survey_admin().
+-- Additional administrators must be added explicitly to public.survey_admins.

@@ -7,6 +7,7 @@
   var session = null;
   var currentSurvey = null;
   var questions = [];
+  var adminEmail = 'ccarlos@live.com';
 
   function status(message, kind) {
     statusBox.textContent = message || '';
@@ -46,33 +47,65 @@
     var panel = element('section', 'panel');
     panel.appendChild(element('span', 'etiqueta', 'FIGARÓ · Acceso privado'));
     panel.appendChild(element('h1', '', 'Administrar encuestas'));
-    panel.appendChild(element('p', 'subtitulo', 'Accede para diseñar formularios y descargar las respuestas. El registro público está desactivado.'));
+    panel.appendChild(element('p', 'subtitulo', 'Recibe un código de acceso en el correo autorizado para diseñar formularios y descargar las respuestas.'));
     var form = element('form', '');
-    [['Correo electrónico', 'email'], ['Contraseña', 'password']].forEach(function (field, index) {
-      var wrap = element('div', 'campo');
-      var label = element('label', '', field[0]);
-      var input = element('input');
-      input.type = field[1];
-      input.required = true;
-      input.autocomplete = index ? 'current-password' : 'username';
-      input.id = index ? 'password' : 'email';
-      label.htmlFor = input.id;
-      wrap.appendChild(label);
-      wrap.appendChild(input);
-      form.appendChild(wrap);
-    });
+    var emailWrap = element('div', 'campo');
+    var emailLabel = element('label', '', 'Correo electrónico');
+    var emailInput = element('input');
+    emailInput.type = 'email';
+    emailInput.id = 'email';
+    emailInput.value = adminEmail;
+    emailInput.readOnly = true;
+    emailInput.autocomplete = 'username';
+    emailLabel.htmlFor = emailInput.id;
+    emailWrap.appendChild(emailLabel);
+    emailWrap.appendChild(emailInput);
+    form.appendChild(emailWrap);
+    var codeWrap = element('div', 'campo');
+    var codeLabel = element('label', '', 'Código de acceso');
+    var codeInput = element('input');
+    codeInput.type = 'text';
+    codeInput.id = 'code';
+    codeInput.inputMode = 'numeric';
+    codeInput.autocomplete = 'one-time-code';
+    codeInput.required = false;
+    codeInput.hidden = true;
+    codeLabel.htmlFor = codeInput.id;
+    codeWrap.appendChild(codeLabel);
+    codeWrap.appendChild(codeInput);
+    codeWrap.hidden = true;
+    form.appendChild(codeWrap);
     var actions = element('div', 'acciones');
-    var submit = element('button', 'boton boton--principal', 'Entrar');
+    var submit = element('button', 'boton boton--principal', 'Enviar código');
     submit.type = 'submit';
     actions.appendChild(submit);
     form.appendChild(actions);
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       submit.disabled = true;
-      status('Verificando acceso…');
-      client.auth.signInWithPassword({
-        email: form.querySelector('#email').value.trim(),
-        password: form.querySelector('#password').value
+      if (codeWrap.hidden) {
+        status('Enviando código…');
+        client.auth.signInWithOtp({
+          email: adminEmail,
+          options: { shouldCreateUser: true }
+        }).then(function (result) {
+          if (result.error) throw result.error;
+          codeWrap.hidden = false;
+          codeInput.hidden = false;
+          codeInput.required = true;
+          codeInput.focus();
+          submit.textContent = 'Verificar código';
+          status('Te enviamos un código a ' + adminEmail + '.');
+        }).catch(function (error) {
+          status('No se pudo enviar el código: ' + error.message, 'error');
+        }).finally(function () { submit.disabled = false; });
+        return;
+      }
+      status('Verificando código…');
+      client.auth.verifyOtp({
+        email: adminEmail,
+        token: codeInput.value.trim(),
+        type: 'email'
       }).then(function (result) {
         if (result.error) throw result.error;
         session = result.data.session;
@@ -86,7 +119,7 @@
           return renderDashboard();
         });
       }).catch(function (error) {
-        status('No se pudo iniciar sesión: ' + error.message, 'error');
+        status('No se pudo verificar el código: ' + error.message, 'error');
       }).finally(function () { submit.disabled = false; });
     });
     panel.appendChild(form);
@@ -423,7 +456,7 @@
 
   function loadResponsePage(survey, offset, accumulated) {
     var pageSize = 500;
-    return client.from('survey_responses').select('id,answers,consent,submitted_at')
+    return client.from('survey_responses').select('id,age_range,answers,consent,submitted_at')
       .eq('survey_id', survey.id).order('submitted_at', { ascending: true })
       .range(offset, offset + pageSize - 1).then(function (result) {
         if (result.error) throw result.error;
@@ -461,6 +494,7 @@
     panel.appendChild(element('p', 'subtitulo', responses.length + ' respuestas recibidas'));
     var actions = element('div', 'acciones');
     actions.appendChild(button('Descargar paquete para Mirador (.json)', 'boton--principal', function () {
+      var ageQuestionId = '00000000-0000-4000-8000-000000000001';
       var packageData = {
         format: 'figaro-mirador-export',
         version: 1,
@@ -470,7 +504,15 @@
           title: survey.title,
           description: survey.description || '',
           createdAt: survey.created_at,
-          questions: survey.questions
+          questions: survey.questions.concat([{
+            id: ageQuestionId,
+            texto: 'Rango de edad',
+            tipo: 'unica',
+            opciones: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+', 'No registrado'],
+            min: 1,
+            max: 5,
+            requerida: true
+          }])
         },
         responses: responses.map(function (response) {
           return {
@@ -478,16 +520,16 @@
             fecha: response.submitted_at,
             canal: 'web',
             meta: {},
-            items: response.answers
+            items: Object.assign({}, response.answers, { [ageQuestionId]: response.age_range || 'No registrado' })
           };
         })
       };
       download('figaro-' + slug(survey.title) + '-mirador.json', JSON.stringify(packageData, null, 2), 'application/json;charset=utf-8');
     }));
     actions.appendChild(button('Descargar CSV', '', function () {
-      var rows = [['fecha'].concat(survey.questions.map(function (question) { return question.texto; }))];
+      var rows = [['fecha', 'Rango de edad'].concat(survey.questions.map(function (question) { return question.texto; }))];
       responses.forEach(function (response) {
-        rows.push([response.submitted_at].concat(survey.questions.map(function (question) {
+        rows.push([response.submitted_at, response.age_range || 'No registrado'].concat(survey.questions.map(function (question) {
           var answer = response.answers[question.id];
           return Array.isArray(answer) ? answer.join(' | ') : answer;
         })));
@@ -505,6 +547,7 @@
       var summary = element('details', 'pregunta-editor');
       var heading = element('summary', '', 'Respuesta ' + (index + 1) + ' · ' + new Date(response.submitted_at).toLocaleString());
       summary.appendChild(heading);
+      summary.appendChild(element('p', 'ayuda', 'Rango de edad: ' + (response.age_range || '—')));
       survey.questions.forEach(function (question) {
         var value = response.answers[question.id];
         summary.appendChild(element('p', 'ayuda', question.texto + ': ' + (Array.isArray(value) ? value.join(', ') : (value == null ? '—' : String(value)))));

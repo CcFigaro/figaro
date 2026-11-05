@@ -5,8 +5,8 @@ El sitio estático de GitHub Pages no guarda contraseñas ni respuestas. Esta se
 ## Preparación única
 
 1. La URL pública de FIGARÓ está definida en `config.js` como `https://ccfigaro.github.io/figaro/`; los enlaces compartidos apuntarán allí. Crea un proyecto en Supabase y copia su **Project URL** y la clave pública **anon/publishable** en ese archivo. Nunca incluyas una clave `service_role` en este sitio.
-2. En Supabase, abre **Authentication → Providers / Sign-in** y desactiva el registro público. Crea una sola cuenta administradora desde el panel de Supabase.
-3. Ejecuta `supabase-schema.sql` en el SQL Editor. Copia el **User UID** de la cuenta administradora desde Authentication y sustituye el UUID de ejemplo del `INSERT` comentado al final del SQL; luego ejecuta ese `INSERT`.
+2. En Supabase, habilita el proveedor **Email** y los registros por correo con confirmación. Configura la plantilla de correo de autenticación para mostrar el código `{{ .Token }}`. Aunque Supabase permita crear cuentas, el panel solo autoriza la dirección confirmada `ccarlos@live.com` (además de los UID añadidos explícitamente a `survey_admins`).
+3. Ejecuta `supabase-schema.sql` en el SQL Editor. Si ya lo habías ejecutado, vuelve a ejecutar el archivo actualizado para aplicar la autorización por correo y las validaciones del rango de edad. La primera vez que uses el panel, se enviará un código a `ccarlos@live.com`; al confirmarlo se crea la cuenta y queda autorizada automáticamente.
 4. En **Authentication → URL Configuration**, agrega `https://ccfigaro.github.io` a **Site URL** y a la lista de URLs permitidas.
 5. Publica los archivos del repositorio en GitHub Pages. La administración estará en `/figaro/encuestas/`; cada formulario público tendrá su propio enlace `/figaro/encuestas/responder.html?id=...`.
 
@@ -21,7 +21,7 @@ El sitio estático de GitHub Pages no guarda contraseñas ni respuestas. Esta se
 
 - El SQL no concede lectura directa de la tabla de encuestas ni de las respuestas al público. Un enlace aleatorio permite consultar solamente su formulario publicado; la lectura, edición y exportación de respuestas requiere el UID de la cuenta autorizada.
 - Cuando ya se recibe la primera respuesta, el cuestionario queda protegido contra cambios en sus preguntas para conservar la correspondencia entre preguntas y datos; crea otra encuesta si necesitas un instrumento diferente.
-- El formulario público solo envía las respuestas y la aceptación del consentimiento. No recoge nombre, edad ni IP.
+- El formulario público recoge el rango de edad, las respuestas y la aceptación del consentimiento. No recoge nombre ni dirección IP. El rango de edad también se incluye en el CSV y como variable categórica al importar el JSON en Mirador.
 - Antes de recolectar datos sensibles o de menores, define aviso, consentimiento, retención y eliminación adecuados a tu investigación.
 - Los formularios públicos aceptan envíos anónimos; un endpoint público puede recibir spam. Para investigaciones de alto riesgo o grandes volúmenes, añade una verificación anti-bots y límites de envío antes de difundir el enlace.
 - La clave anon/publishable es visible en el navegador por diseño; la seguridad depende de RLS. No publiques la clave `service_role`.

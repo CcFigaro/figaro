@@ -109,13 +109,37 @@
     survey.questions.forEach(function (question, index) {
       form.appendChild(questionControl(question, index));
     });
+    var ageSection = node('section', 'pregunta');
+    var ageLabel = node('label', '', 'Rango de edad *');
+    ageLabel.htmlFor = 'rango-edad';
+    ageSection.appendChild(ageLabel);
+    var ageSelect = document.createElement('select');
+    ageSelect.id = 'rango-edad';
+    ageSelect.name = 'age_range';
+    ageSelect.required = true;
+    [
+      ['', 'Selecciona tu rango de edad'],
+      ['18-24', '18–24'],
+      ['25-34', '25–34'],
+      ['35-44', '35–44'],
+      ['45-54', '45–54'],
+      ['55-64', '55–64'],
+      ['65+', '65 o más']
+    ].forEach(function (option) {
+      var item = document.createElement('option');
+      item.value = option[0];
+      item.textContent = option[1];
+      ageSelect.appendChild(item);
+    });
+    ageSection.appendChild(ageSelect);
+    form.appendChild(ageSection);
     var consent = node('label', 'consentimiento');
     var checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.required = true;
     checkbox.name = 'consentimiento';
     consent.appendChild(checkbox);
-    consent.appendChild(node('span', '', 'Acepto participar voluntariamente. Mis respuestas se utilizarán de forma agregada para fines de investigación. No se solicitan datos de identidad.'));
+    consent.appendChild(node('span', '', 'Acepto participar voluntariamente. Se recopilará mi rango de edad y mis respuestas para fines de investigación agregada. No se solicitan nombre ni dirección IP.'));
     form.appendChild(consent);
     var submit = node('button', 'boton boton--principal', 'Enviar respuestas');
     submit.type = 'submit';
@@ -137,6 +161,7 @@
       show('Enviando tu respuesta…');
       client.from('survey_responses').insert({
         survey_id: survey.id,
+        age_range: ageSelect.value,
         answers: answers,
         consent: checkbox.checked
       }).then(function (result) {
