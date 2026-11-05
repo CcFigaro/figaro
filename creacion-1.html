@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No sé de dónde vengo — FIGARÓ</title>
+<meta name="description" content="Poema sobre la identidad, la memoria ancestral, el desarraigo y la reconstrucción personal.">
+<meta name="author" content="Juan Ernesto Carlos">
+<meta name="theme-color" content="#1B3A2F">
+<link rel="icon" href="favicon.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="favicon.jpg">
+<link rel="canonical" href="https://ccfigaro.github.io/figaro/creacion-1.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="FIGARÓ">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="No sé de dónde vengo">
+<meta property="og:description" content="Poema sobre la identidad, la memoria ancestral y el desarraigo.">
+<meta property="og:url" content="https://ccfigaro.github.io/figaro/creacion-1.html">
+<meta property="og:image" content="https://ccfigaro.github.io/figaro/no-se-de-donde-vengo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --verde: #1B3A2F; --verde-cl: #2C5A47;
+    --negro: #0A0A0A; --blanco: #FFFFFF;
+    --crema: #F5F3EE; --gris: #6B6B6B; --gris-cl: #E0E0E0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--crema); color: var(--negro); line-height: 1.6;
+  }
+  header {
+    background: var(--negro); color: var(--blanco);
+    padding: 24px 40px; display: flex; align-items: center; gap: 20px;
+  }
+  .foto-perfil {
+    width: 68px; height: 68px; border-radius: 50%;
+    object-fit: cover; border: 2px solid var(--verde-cl); flex-shrink: 0;
+  }
+  .titulo-blog {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 42px; letter-spacing: 4px; font-weight: 700;
+  }
+  .titulo-blog span { color: var(--verde-cl); }
+  nav {
+    background: var(--verde); padding: 0 40px;
+    display: flex; flex-wrap: wrap; border-bottom: 3px solid var(--negro);
+  }
+  nav a {
+    color: var(--blanco); text-decoration: none; padding: 16px 22px;
+    font-family: sans-serif; font-size: 14px; letter-spacing: 2px;
+    text-transform: uppercase; transition: background 0.2s;
+  }
+  nav a:hover, nav a.activo { background: var(--negro); }
+  .contenedor { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+  .migas {
+    font-family: sans-serif; font-size: 12px; letter-spacing: 1px;
+    padding: 30px 0 0;
+  }
+  .migas a { color: var(--verde); text-decoration: none; }
+  .migas a:hover { text-decoration: underline; }
+  .migas span { color: var(--gris); }
+  article {
+    background: var(--blanco); border-top: 4px solid var(--negro);
+    margin: 24px 0 40px; overflow: hidden;
+  }
+  .portada-poema { background: var(--negro); text-align: center; }
+  .portada-poema img {
+    display: block; width: auto; max-width: 100%; height: auto;
+    max-height: 72vh; margin: 0 auto; object-fit: contain;
+  }
+  .cuerpo-poema { padding: 48px 56px 56px; }
+  .etiqueta {
+    display: inline-block; background: var(--verde); color: var(--blanco);
+    font-family: sans-serif; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; padding: 6px 14px; margin-bottom: 22px;
+  }
+  h1.titulo-poema {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px; line-height: 1.2; color: var(--negro); margin-bottom: 18px;
+  }
+  .meta-poema {
+    font-family: sans-serif; font-size: 12.5px; color: var(--gris);
+    letter-spacing: 1px; padding-bottom: 26px; margin-bottom: 34px;
+    border-bottom: 1px solid var(--gris-cl);
+  }
+  .poema {
+    max-width: 620px; margin: 0 auto;
+    font-size: 18px; line-height: 1.85; color: #222;
+  }
+  .poema p { margin-bottom: 28px; }
+  .poema p:last-child { margin-bottom: 0; }
+  .volver {
+    display: inline-block; margin: 0 0 60px; font-family: sans-serif;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--verde); text-decoration: none;
+  }
+  .volver:hover { color: var(--negro); }
+  footer {
+    background: var(--negro); color: var(--blanco);
+    text-align: center; padding: 36px 20px; margin-top: 60px;
+  }
+  .redes {
+    display: flex; justify-content: center; gap: 22px;
+    margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .redes a {
+    color: var(--blanco); text-decoration: none; font-family: sans-serif;
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    border: 1px solid var(--verde-cl); padding: 8px 16px; transition: background 0.2s;
+  }
+  .redes a:hover { background: var(--verde); }
+  footer .copy {
+    font-size: 13px; color: #999; font-family: sans-serif; letter-spacing: 1px;
+  }
+  @media (max-width: 800px) {
+    .titulo-blog { font-size: 30px; letter-spacing: 2px; }
+    header { padding: 20px; gap: 14px; }
+    .foto-perfil { width: 54px; height: 54px; }
+    nav { padding: 0 10px; }
+    nav a { padding: 12px 14px; font-size: 12px; }
+    .contenedor { padding: 0 20px; }
+    .cuerpo-poema { padding: 30px 22px 36px; }
+    h1.titulo-poema { font-size: 28px; }
+    .poema { font-size: 16.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="mi-foto.jpg" alt="Retrato de Juan Ernesto Carlos" class="foto-perfil">
+  <h1 class="titulo-blog">FIGAR<span>Ó</span></h1>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="analisis.html">Análisis</a>
+  <a href="creacion.html" class="activo">Creación</a>
+  <a href="investigacion.html">Investigación</a>
+  <a href="video.html">Video</a>
+  <a href="sobre-mi.html">Sobre mí</a>
+  <a href="encuestas/index.html">Encuestas</a>
+</nav>
+
+<div class="contenedor">
+  <p class="migas"><a href="index.html">Inicio</a> <span>›</span> <a href="creacion.html">Creación</a> <span>›</span> <span>No sé de dónde vengo</span></p>
+
+  <article>
+    <div class="portada-poema">
+      <img src="no-se-de-donde-vengo.jpg" alt="Figura encadenada en un paisaje árido">
+    </div>
+
+    <div class="cuerpo-poema">
+      <span class="etiqueta">Poema</span>
+      <h1 class="titulo-poema">No sé de dónde vengo</h1>
+      <p class="meta-poema">Por Juan Ernesto Carlos · 5 de noviembre de 2026</p>
+
+      <div class="poema">
+        <p>No sé de dónde vengo,<br>
+        pero mi rostro me da pistas:<br>
+        el tamaño de mi boca,<br>
+        el color de mi piel,<br>
+        la forma de mis ojos.</p>
+
+        <p>También mis traumas,<br>
+        la forma en que el mundo me ve<br>
+        y la forma en que yo veo ese mundo.</p>
+
+        <p>No sé de dónde vengo.<br>
+        Pero sé que no soy de donde estoy.<br>
+        No soy.<br>
+        No pertenezco.</p>
+
+        <p>Y cada día,<br>
+        los míos<br>
+        me hacen sentir ajeno.</p>
+
+        <p>Me dicen que somos inferiores,<br>
+        que carecemos de inteligencia,<br>
+        que no apostamos al progreso,<br>
+        que somos marginales,<br>
+        casi animales irracionales,<br>
+        estorbo de la historia.</p>
+
+        <p>Y en medio de todo,<br>
+        algo dentro de mí pregunta:<br>
+        ¿Qué tuvo que pasar<br>
+        para que pensemos eso de nosotros mismos?<br>
+        ¿Por qué aprendimos a despreciarnos a nosotros mismos?<br>
+        ¿En qué momento perdimos la dignidad?<br>
+        ¿En qué momento comenzamos a odiar nuestra propia identidad?</p>
+
+        <p>Quizás no exista una sola respuesta.<br>
+        Casi todo en la vida<br>
+        tiene múltiples respuestas.</p>
+
+        <p>Quizás no conocemos nuestra historia.<br>
+        Alguien más la contó por nosotros.</p>
+
+        <p>Nuestra piel dice<br>
+        que somos de otro continente,<br>
+        pero no hablamos su lengua.</p>
+
+        <p>Tenemos mucho de su cultura,<br>
+        pero no adoramos los mismos dioses,<br>
+        aunque tampoco tenemos claro<br>
+        qué son los dioses.</p>
+
+        <p>Mis traumas me dicen<br>
+        que no llegué a estas tierras<br>
+        por voluntad propia.</p>
+
+        <p>Me dicen que me quitaron el alma,<br>
+        que me degradaron<br>
+        a una especie de máquina<br>
+        con un motor integrado<br>
+        que trabajaba hasta la muerte.</p>
+
+        <p>Mis traumas me dicen<br>
+        que tuvieron que golpearme<br>
+        para que abandonara mi idioma,<br>
+        mis dioses,<br>
+        mis creencias,<br>
+        mi cultura<br>
+        y mi forma de pensar.</p>
+
+        <p>Mi cuerpo me dice<br>
+        que mi resistencia<br>
+        es el resultado de un individuo<br>
+        que tuvo que sobrevivir<br>
+        a lo impensable<br>
+        para sobrevivir al infierno<br>
+        que es este lugar.</p>
+
+        <p>Así que no sé de dónde vengo.</p>
+
+        <p>A mis ancestros<br>
+        no les permitieron decidir su rumbo.<br>
+        Incluso jugaron con sus memorias.<br>
+        Los golpes en su piel<br>
+        marcaron un trauma<br>
+        que, aunque los llevó<br>
+        a olvidar de dónde venían,<br>
+        dejó todas las pistas.</p>
+
+        <p>Nos quitaron hasta la dignidad,<br>
+        pero dejaron huellas.<br>
+        No existe el crimen perfecto.</p>
+
+        <p>Y, basándome en esas pistas,<br>
+        voy a encontrar mi camino.</p>
+
+        <p>No puedo quitarme su idioma,<br>
+        pero sí sus dioses.</p>
+
+        <p>No puedo cambiar mi rostro,<br>
+        pero sí aceptar el mío.</p>
+
+        <p>No puedo negar mi fuerza,<br>
+        pero sí aceptar mis debilidades.</p>
+
+        <p>Y quizás,<br>
+        al no saber de dónde vengo,<br>
+        no sepa a dónde regresar.<br>
+        Pero puedo volver a ser lo que fui<br>
+        sin tener un lugar al que regresar.</p>
+
+        <p>Solo tengo que deshacerme<br>
+        de mis traumas.</p>
+      </div>
+    </div>
+  </article>
+
+  <a href="creacion.html" class="volver">← Volver a Creación</a>
+</div>
+
+<footer>
+  <div class="redes">
+    <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://instagram.com/WFIGARO" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/Burrolom" target="_blank" rel="noopener">X</a>
+    <a href="https://facebook.com/CcFigaro" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <p class="copy">© 2026 FIGARÓ — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

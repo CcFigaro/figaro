@@ -104,6 +104,20 @@
     background: var(--crema);
     padding-left: 56px;
   }
+  .creacion.con-imagen {
+    display: grid; grid-template-columns: 220px 1fr;
+    padding: 0; overflow: hidden;
+  }
+  .creacion.con-imagen:hover { padding-left: 0; }
+  .creacion .miniatura-creacion {
+    min-height: 100%; overflow: hidden; background: var(--negro);
+  }
+  .creacion .miniatura-creacion img {
+    width: 100%; height: 100%; min-height: 280px;
+    object-fit: cover; display: block; transition: transform 0.3s;
+  }
+  .creacion:hover .miniatura-creacion img { transform: scale(1.04); }
+  .creacion .contenido-creacion { padding: 36px 40px; }
   .creacion::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0;
     width: 0; background: var(--verde); transition: width 0.25s;
@@ -177,6 +191,10 @@
     .titulo-seccion h1 { font-size: 36px; }
     .creacion { padding: 28px 22px; }
     .creacion h2 { font-size: 22px; }
+    .creacion.con-imagen { grid-template-columns: 1fr; }
+    .creacion .miniatura-creacion { height: 280px; }
+    .creacion .miniatura-creacion img { min-height: 0; }
+    .creacion .contenido-creacion { padding: 28px 22px; }
     .aviso { padding: 32px 22px; }
   }
 </style>
@@ -225,10 +243,17 @@
       </a>
       -->
 
-      <div class="aviso">
-        <h3>Aquí irán mis textos</h3>
-        <p>Todavía no he publicado poemas ni cuentos en esta sección. Cuando lo haga, aparecerán en esta misma página.</p>
-      </div>
+      <a href="creacion-1.html" class="creacion con-imagen">
+        <div class="miniatura-creacion">
+          <img src="no-se-de-donde-vengo.jpg" alt="Figura encadenada en un paisaje árido, portada del poema No sé de dónde vengo">
+        </div>
+        <div class="contenido-creacion">
+          <div class="tipo">Poema</div>
+          <h2>No sé de dónde vengo</h2>
+          <p class="fragmento">No sé de dónde vengo, pero mi rostro me da pistas: el tamaño de mi boca, el color de mi piel, la forma de mis ojos.</p>
+          <div class="meta">5 de noviembre de 2026 · Leer poema completo →</div>
+        </div>
+      </a>
 
     </section>
 
