@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La necesidad fabricada — FIGARÓ</title>
+<meta name="description" content="Un ensayo sobre consumo, extracción minera y la distancia entre el progreso económico y una vida digna.">
+<meta name="author" content="Juan Ernesto Carlos">
+<meta name="theme-color" content="#1B3A2F">
+<link rel="icon" href="favicon.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="favicon.jpg">
+<link rel="canonical" href="https://ccfigaro.github.io/figaro/analisis-3.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="FIGARÓ">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="La necesidad fabricada">
+<meta property="og:description" content="Del consumo que se multiplica a la extracción de recursos naturales: ¿qué clase de progreso se construye, para quién y a costa de qué?">
+<meta property="og:url" content="https://ccfigaro.github.io/figaro/analisis-3.html">
+<meta property="og:image" content="https://ccfigaro.github.io/figaro/analisis-necesidad-fabricada-portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --verde: #1B3A2F; --verde-cl: #2C5A47;
+    --negro: #0A0A0A; --blanco: #FFFFFF;
+    --crema: #F5F3EE; --gris: #6B6B6B; --gris-cl: #E0E0E0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--crema); color: var(--negro); line-height: 1.6;
+  }
+  header {
+    background: var(--negro); color: var(--blanco);
+    padding: 24px 40px; display: flex; align-items: center; gap: 20px;
+  }
+  .foto-perfil {
+    width: 68px; height: 68px; border-radius: 50%;
+    object-fit: cover; border: 2px solid var(--verde-cl); flex-shrink: 0;
+  }
+  .titulo-blog {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 42px; letter-spacing: 4px; font-weight: 700;
+  }
+  .titulo-blog span { color: var(--verde-cl); }
+  nav {
+    background: var(--verde); padding: 0 40px;
+    display: flex; flex-wrap: wrap; border-bottom: 3px solid var(--negro);
+  }
+  nav a {
+    color: var(--blanco); text-decoration: none; padding: 16px 22px;
+    font-family: sans-serif; font-size: 14px; letter-spacing: 2px;
+    text-transform: uppercase; transition: background 0.2s;
+  }
+  nav a:hover, nav a.activo { background: var(--negro); }
+  .contenedor { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+  .migas {
+    font-family: sans-serif; font-size: 12px; letter-spacing: 1px;
+    padding: 30px 0 0;
+  }
+  .migas a { color: var(--verde); text-decoration: none; }
+  .migas a:hover { text-decoration: underline; }
+  .migas span { color: var(--gris); }
+  article {
+    background: var(--blanco); border-top: 4px solid var(--negro);
+    margin: 24px 0 40px; overflow: hidden;
+  }
+  .portada-articulo img { width: 100%; height: auto; display: block; }
+  .cuerpo-articulo { padding: 48px 56px 56px; }
+  .etiqueta {
+    display: inline-block; background: var(--verde); color: var(--blanco);
+    font-family: sans-serif; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; padding: 6px 14px; margin-bottom: 22px;
+  }
+  h1.titulo-articulo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px; line-height: 1.2; color: var(--negro); margin-bottom: 18px;
+  }
+  .subtitulo-articulo {
+    font-size: 20px; font-style: italic; color: var(--verde);
+    line-height: 1.5; margin-bottom: 22px;
+  }
+  .meta-articulo {
+    font-family: sans-serif; font-size: 12.5px; color: var(--gris);
+    letter-spacing: 1px; padding-bottom: 26px; margin-bottom: 34px;
+    border-bottom: 1px solid var(--gris-cl);
+  }
+  .resumen {
+    background: var(--crema); border-left: 4px solid var(--verde);
+    padding: 26px 30px; margin-bottom: 26px;
+  }
+  .resumen h2, .nota-editorial h2 {
+    font-family: sans-serif; font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--verde); margin-bottom: 14px;
+  }
+  .resumen p { font-size: 16.5px; line-height: 1.75; color: #1a1a1a; }
+  .palabras-clave {
+    font-family: sans-serif; font-size: 13px; color: var(--gris);
+    line-height: 1.9; margin-bottom: 40px;
+  }
+  .palabras-clave strong { color: var(--negro); }
+  .texto p {
+    font-size: 17.5px; line-height: 1.85; color: #1a1a1a; margin-bottom: 22px;
+  }
+  .texto h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px; line-height: 1.3; color: var(--negro);
+    margin: 48px 0 20px; padding-top: 26px; border-top: 1px solid var(--gris-cl);
+  }
+  .texto h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .descarga {
+    margin-top: 44px; padding-top: 30px; border-top: 1px solid var(--gris-cl);
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  }
+  .descarga p {
+    font-family: sans-serif; font-size: 13px; color: var(--gris);
+    margin: 0; flex: 1 1 260px;
+  }
+  .descarga a {
+    background: var(--verde); color: var(--blanco); text-decoration: none;
+    padding: 13px 24px; font-family: sans-serif; font-size: 12px;
+    letter-spacing: 2px; text-transform: uppercase; transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .descarga a:hover { background: var(--negro); }
+  .volver {
+    display: inline-block; margin: 0 0 60px; font-family: sans-serif;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--verde); text-decoration: none;
+  }
+  .volver:hover { color: var(--negro); }
+  footer {
+    background: var(--negro); color: var(--blanco);
+    text-align: center; padding: 36px 20px; margin-top: 60px;
+  }
+  .redes {
+    display: flex; justify-content: center; gap: 22px;
+    margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .redes a {
+    color: var(--blanco); text-decoration: none; font-family: sans-serif;
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    border: 1px solid var(--verde-cl); padding: 8px 16px; transition: background 0.2s;
+  }
+  .redes a:hover { background: var(--verde); }
+  footer .copy {
+    font-size: 13px; color: #999; font-family: sans-serif; letter-spacing: 1px;
+  }
+  @media (max-width: 800px) {
+    .titulo-blog { font-size: 30px; letter-spacing: 2px; }
+    header { padding: 20px; gap: 14px; }
+    .foto-perfil { width: 54px; height: 54px; }
+    nav { padding: 0 10px; }
+    nav a { padding: 12px 14px; font-size: 12px; }
+    .contenedor { padding: 0 20px; }
+    .cuerpo-articulo { padding: 30px 22px 36px; }
+    h1.titulo-articulo { font-size: 27px; }
+    .subtitulo-articulo { font-size: 17px; }
+    .texto p { font-size: 16.5px; }
+    .resumen { padding: 20px; }
+    .resumen p { font-size: 15.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="mi-foto.jpg" alt="Retrato de Juan Ernesto Carlos" class="foto-perfil">
+  <h1 class="titulo-blog">FIGAR<span>Ó</span></h1>
+</header>
+
+<nav aria-label="Navegación principal">
+  <a href="index.html">Inicio</a>
+  <a href="analisis.html" class="activo">Análisis</a>
+  <a href="creacion.html">Creación</a>
+  <a href="investigacion.html">Investigación</a>
+  <a href="video.html">Video</a>
+  <a href="sobre-mi.html">Sobre mí</a>
+  <a href="encuestas/index.html">Encuestas</a>
+</nav>
+
+<div class="contenedor">
+  <p class="migas"><a href="index.html">Inicio</a> <span>›</span> <a href="analisis.html">Análisis</a> <span>›</span> <span>La necesidad fabricada</span></p>
+
+  <article>
+    <div class="portada-articulo">
+      <img src="analisis-necesidad-fabricada-portada.jpg" alt="Un río contaminado junto a una explotación minera y un edificio moderno donde dos personas observan el paisaje">
+    </div>
+
+    <div class="cuerpo-articulo">
+      <span class="etiqueta">Análisis · Consumo y medioambiente</span>
+      <h1 class="titulo-articulo">La necesidad fabricada</h1>
+      <p class="subtitulo-articulo">Del consumo que se multiplica a la extracción de recursos naturales</p>
+      <p class="meta-articulo">Por Juan Ernesto Carlos · Ensayo de análisis social y ambiental · Lectura de 5 minutos · 3 páginas</p>
+
+      <div class="resumen">
+        <h2>Resumen</h2>
+        <p>Este ensayo cuestiona un modelo de producción que convierte el consumo en una fuente permanente de nuevas necesidades y presiona la extracción de recursos naturales. A través de la minería, el oro y las desigualdades que deja la contaminación, plantea una pregunta central: qué entendemos por progreso, quién recibe sus beneficios y quién asume sus costos. El texto no propone renunciar a los avances ni rechazar toda minería, sino distinguir las necesidades esenciales del consumo superfluo y defender condiciones de vida dignas.</p>
+      </div>
+
+      <p class="palabras-clave"><strong>Palabras clave:</strong> consumo, minería, recursos naturales, desigualdad, medioambiente, progreso.</p>
+
+      <div class="texto">
+        <h2>Del progreso a la necesidad de consumir</h2>
+
+        <p>El llamado progreso del ser humano ha dependido, y mucho, de lo que puede arrancarse a la naturaleza. Esa dependencia ha cambiado de rostro según la época: primero fueron las piedras, luego la madera, hasta que, a través del fuego, se aprendió a domar minerales más pesados y difíciles de extraer y de moldear. Aquello transformó la forma de producir y de repartir la riqueza, acercó a las sociedades entre sí e hizo, al menos en apariencia, más llevadero el trabajo. Conviene decirlo con cautela, porque ese avance no llegó por igual a todos los rincones de la tierra. De ahí que valga la pena detenerse en un cambio concreto: el paso de producir para la necesidad a producir para el consumo, con sus consecuencias sobre la naturaleza y sobre la mirada de quienes transitan ese camino a ciegas, en plena época de la posverdad.</p>
+
+        <p>Antes de adentrarse en ello, es útil retroceder miles de años, o quizás millones. Cabe imaginar a un individuo que vive en una cueva, probablemente con un grupo de una docena de personas. Su tiempo se reparte entre cazar para alimentarse y recoger frutos y raíces. No tiene grandes necesidades: comer y, tal vez, disfrutar del cuerpo. Sus días giran en ese ritmo: cazando, recogiendo y teniendo sexo. Es posible que talle herramientas con piedras o palos y que se cubra con cueros de animales solo cuando aprieta el frío. No se sabe con exactitud si era un ser de preguntas profundas, pero en algún momento pudo sentir la necesidad de decir «aquí estoy». Ese «aquí estoy», al que se volverá más adelante, podría ser el mismo impulso que hoy lleva a invertir fortunas en buscar vida en otros planetas mientras se ignoran las vidas que laten en este.</p>
+
+        <p>Hoy la humanidad vive de una forma complicada, y esa vida se sostiene sobre el consumo. Existen herramientas como la filosofía, pero faltan argumentos, o quizás ganas, para bajar el ritmo de esta velocidad. Casi todos los inventos están pensados para hacer las cosas más rápido, porque no hay tiempo o porque se quiere ahorrarlo, y casi nadie sabe para qué. Ese tiempo ganado se llena enseguida de nuevas obligaciones, nuevas formas de consumo y nuevas necesidades que aparecen casi al mismo ritmo en que se satisfacen las anteriores. Se vive tan rápido que el cuerpo termina silenciado, y ese estrés agudiza enfermedades que, con el tiempo, acaban con la vida.</p>
+
+        <h2>Minería, consumo y desigualdad</h2>
+
+        <p>¿Por qué se llega a sacrificar y contaminar el ambiente propio para fabricar cosas que supuestamente mejoran la vida, hasta quedar atrapados en ese bucle? Los demás animales solo se mueven para buscar lo que necesitan para subsistir. El ser humano pierde esa subsistencia a fuerza de crear cosas. Tampoco basta ese argumento para explicar lo complicado del sistema, porque pesan además la carencia, o el aprovechamiento, frente a los líderes que se escogen y que muchas veces empujan hacia este rumbo. Se partió de un simple trabajar para alimentarse y se llegó a comer hasta enfermar por exceso, mientras millones de personas no tienen qué comer. Los recursos que hacen la vida más fácil (y esto, entre comillas) provienen con frecuencia de territorios cuyos habitantes no gozan de lo que podría llamarse una vida digna.</p>
+
+        <p>¿Y qué tiene que ver todo esto con la minería? La minería proporciona muchos de los elementos con los que se construye lo necesario para vivir mejor. El cobre recorre cables, componentes electrónicos y redes de energía; el aluminio sostiene la construcción, el transporte y hasta los aviones; el níquel está en el acero inoxidable y en ciertas baterías; el zinc protege al acero de la corrosión; el plomo vive en las baterías y el estaño en las soldaduras de lo electrónico. Negar esa utilidad sería absurdo, y más aún en tiempos de transición energética, cuando la demanda de algunos de estos metales crece por razones legítimas. Pero reconocerla no equivale a aceptar cualquier nivel de extracción, ni a suponer que toda la demanda responde a necesidades esenciales. Lo que se cuestiona no es la minería en sí, sino la parte que alimenta la acumulación y el consumo superfluo.</p>
+
+        <p>El oro es el ejemplo más claro. En 2025 la demanda mundial rondó las 5.000 toneladas, y solo 322,8 se destinaron a usos tecnológicos. A inversión fueron 2.175,3; a compras de bancos centrales y otras instituciones, 863,3; y a joyería, 1.638. No se trata de despreciar el valor cultural, estético o económico del oro, ni la función de reserva que cumple en las finanzas. Se trata de preguntarse si lo que se saca de la tierra responde a lo que la humanidad necesita o a un sistema que convierte los recursos en instrumentos de acumulación. Podría pensarse incluso que, si se utilizara únicamente el oro ya extraído y se destinara solo a lo que de verdad hace falta, la tierra podría pasar siglos, quizás trescientos años, sin ser tocada en busca del preciado metal, y sin ser contaminada en zonas donde la minería ni siquiera debería considerarse una opción. El discurso del progreso y del crecimiento económico se vende muy bien, pero basta mirar lo que puede palparse: los grandes millonarios no son los pueblos que cargan con los desperdicios de la minería. Quienes se enriquecen muchas veces ni conocen esos lugares; especulan con recursos cada vez más demandados para fabricar cosas que ya no tienen que ver con la subsistencia, sino con acumular y apostar.</p>
+
+        <h2>¿Qué significa vivir con dignidad?</h2>
+
+        <p>La contradicción no vive solo en la minería. Vive en la vivienda: es probable que en muchos países existan más casas vacías que personas sin techo, y aun así una enorme cantidad de gente no tiene dónde dormir. Vive en la salud, en la educación, en casi todo. La humanidad, a costa de explotar y contaminar la naturaleza, ha construido un sistema donde casi todo resulta fácil comparado con la vida en las cuevas, y a la vez les niega esas facilidades a sus semejantes, porque a esas cosas se les dio un valor que no todos pueden pagar. Y los grupos a quienes se les niega ese privilegio son, precisamente, los que más sufren la forma indiscriminada en que se tratan los recursos naturales.</p>
+
+        <p>Quizás aquel hombre de hace miles de años solo quiso decir que estuvo aquí. Quiso dejar su huella, esa necesidad de permanecer que tienen los humanos cuando un ciclo se acaba. Pero su «aquí estoy» no desembocó en preguntas más grandes, como qué somos. Y hoy se vive de nuevo en una sociedad que ha dejado de preguntarse. No es una crítica a los modos de vida, sino a los modelos de producción. La pregunta debería ser para qué acumular tanto cuando la vida es finita, y por qué hay que acumular a costa de quienes hacen posible esa acumulación. Debería venir acompañada de otra: ¿para qué cambiar el carro o el celular todos los años, cuando casi nada en ellos cambia a esa velocidad? Y vuelve entonces la gran pregunta: ¿por qué dejar que el estrés llegue hasta cierto punto para renovar cosas que no hace falta renovar, y que muchas veces ni siquiera se necesitan?</p>
+
+        <p>Es triste ver cómo gran parte de la humanidad dejó de tener necesidades y pasó a tener intereses. Las necesidades fueron jaqueadas por el sistema para vender ilusiones, y esas ilusiones tienen un costo de vida terrible. Pero el mundo no se detiene, porque hay que ser uno más de la manada, y los humanos, al final, siguen siendo una tribu. Que nadie se confunda: la minería y la explotación de los recursos naturales, tal como se practican hoy, sirven en buena medida para sostener un modelo de producción que terminará sucumbiendo, porque se vive en un planeta de recursos finitos pretendiendo vivir sin límites. No se trata de renunciar a los avances ni de volver a las cavernas, sino de preguntarse qué clase de progreso se está construyendo, para quién y a costa de qué. Quizás el verdadero progreso no sea tener cada vez más cosas, sino llegar a un punto en que no haga falta destruir tanto para vivir con dignidad.</p>
+      </div>
+
+      <div class="descarga">
+        <p>Lee o descarga el documento original en PDF.</p>
+        <a href="necesidad-fabricada.pdf" download>Descargar PDF</a>
+      </div>
+    </div>
+  </article>
+
+  <a class="volver" href="analisis.html">← Volver a Análisis</a>
+</div>
+
+<footer>
+  <div class="redes">
+    <a href="https://www.youtube.com/@Burrolom" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://instagram.com/WFIGARO" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/Burrolom" target="_blank" rel="noopener">X</a>
+    <a href="https://facebook.com/CcFigaro" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <p class="copy">© 2026 FIGARÓ — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
